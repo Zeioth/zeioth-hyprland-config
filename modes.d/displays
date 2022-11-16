@@ -1,0 +1,119 @@
+set $mode_displays "\
+<span foreground='$modes_secondary_color'></span> \
+<span foreground='$modes_primary_color'> \
+<span foreground='$modes_secondary_color'>(<b>i</b>)</span>1-4K-60hz \
+<span foreground='$modes_secondary_color'>(<b>o</b>)</span>1-4K-71hz \
+<span foreground='$modes_secondary_color'>(<b>t</b>)</span>3-4K-71hz \
+<span foreground='$modes_secondary_color'>(<b>s</b>)</span>6-4K-71hz \
+</span>"
+
+mode --pango_markup $mode_displays {
+
+  # FIXME: Si algún modo de gaming falla, quita el parametro pos y dejalo a su bola.
+
+
+  # NORMAL
+  # ======================================================================
+  # This special mode is not listed: We use it for capped FPS games like 
+  # Street fighter, to get minimum latency.
+  $bindsym i mode "default", exec swaymsg \
+    output $screen1 disable; \
+    output $screen2 disable; \
+    output $screen3 disable; \
+    output $screen4 mode 3840x2160@59.997Hz pos 0 0 scale 1 enable; \
+    output $screen5 disable; \
+    output $screen6 disable
+
+  # One display
+  $bindsym o mode "default", exec swaymsg \
+    output $screen1 disable; \
+    output $screen2 disable; \
+    output $screen3 disable; \
+    output $screen4 mode 3840x2160@70.981Hz pos 0 0 scale 1 enable; \
+    output $screen5 disable; \
+    output $screen6 disable
+
+  # Three displays
+  $bindsym t mode "default", exec swaymsg \
+    output $screen1 disable; \
+    output $screen2 disable; \
+    output $screen3 disable; \
+    output $screen4 mode 3840x2160@70.981Hz pos 0 0 scale 1 enable; \
+    output $screen5 mode 3840x2160@70.981Hz pos 3840 0 scale 1 enable; \
+    output $screen6 mode 3840x2160@70.981Hz pos 7680 0 scale 1 enable
+
+  # Six displays
+  $bindsym s mode "default", exec swaymsg \
+    output $screen1 mode 3840x2160@70.981Hz pos 0 0 scale 1 enable; \
+    output $screen2 mode 3840x2160@70.981Hz pos 3840 0 scale 1 enable; \
+    output $screen3 mode 3840x2160@70.981Hz pos 7680 0 scale 1 enable; \
+    output $screen4 mode 3840x2160@70.981Hz pos 0 2160 scale 1 enable; \
+    output $screen5 mode 3840x2160@70.981Hz pos 3840 2160 scale 1 enable; \
+    output $screen6 mode 3840x2160@70.981Hz pos 7680 2160 scale 1 enable
+
+
+  # 1080p
+  # ======================================================================
+  
+  # One display scaled
+  #$bindsym a mode "default", exec swaymsg \
+  #  output $screen1 disable; \
+  #  output $screen2 disable; \
+  #  output $screen3 disable; \
+  #  output $screen4 mode 1920x1080@70.981Hz pos 0 0 scale 1 enable; \
+  #  output $screen5 disable; \
+  #  output $screen6 disable
+
+  # Three displays scaled
+  #$bindsym b mode "default", exec swaymsg \
+  #  output $screen1 disable; \
+  #  output $screen2 disable; \
+  #  output $screen3 disable; \
+  #  output $screen4 mode 1920x1080@70.981Hz pos 0 0 scale 1 enable; \
+  #  output $screen5 mode 1920x1080@70.981Hz pos 1920 0 scale 1 enable; \
+  #  output $screen6 mode 1920x1080@70.981Hz pos 3840 0 scale 1 enable
+
+  # Six displays scaled
+  #$bindsym c mode "default", exec swaymsg \
+  #  output $screen1 mode 1920x1080@70.981Hz pos 0 0 scale 1 enable; \
+  #  output $screen2 mode 1920x1080@70.981Hz pos 1920 0 scale 1 enable; \
+  #  output $screen3 mode 1920x1080@70.981Hz pos 3840 0 scale 1 enable; \
+  #  output $screen4 mode 1920x1080@70.981Hz pos 0 1080 scale 1 enable; \
+  #  output $screen5 mode 1920x1080@70.981Hz pos 1920 1080 scale 1 enable; \
+  #  output $screen6 mode 1920x1080@70.981Hz pos 3840 1080 scale 1 enable
+
+  # QHD
+  # ======================================================================
+  
+  # One display scaled
+  #$bindsym x mode "default", exec swaymsg \
+  #  output $screen1 disable; \
+  #  output $screen2 disable; \
+  #  output $screen3 disable; \
+  #  output $screen4 mode 2560x1440@70.981Hz pos 0 0 scale 1 enable; \
+  #  output $screen5 disable; \
+  #  output $screen6 disable
+
+  # Three displays scaled
+  #$bindsym y mode "default", exec swaymsg \
+  #  output $screen1 disable; \
+  #  output $screen2 disable; \
+  #  output $screen3 disable; \
+  #  output $screen4 mode 2560x1440@70.981Hz pos 0 0 scale 1 enable; \
+  #  output $screen5 mode 2560x1440@70.981Hz pos 2560 0 scale 1 enable; \
+  #  output $screen6 mode 2560x1440@70.981Hz pos 5120 0 scale 1 enable
+
+  # Six displays scaled
+  #$bindsym z mode "default", exec swaymsg \
+  #  output $screen1 mode 2560x1440@70.981Hz pos 0 0 scale 1 enable; \
+  #  output $screen2 mode 2560x1440@70.981Hz pos 2560 0 scale 1 enable; \
+  #  output $screen3 mode 2560x1440@70.981Hz pos 5120 0 scale 1 enable; \
+  #  output $screen4 mode 2560x1440@70.981Hz pos 0 1440 scale 1 enable; \
+  #  output $screen5 mode 2560x1440@70.981Hz pos 2560 1440 scale 1 enable; \
+  #  output $screen6 mode 2560x1440@70.981Hz pos 5120 1440 scale 1 enable
+
+
+    # Return to default mode.
+    $bindsym Escape mode "default"
+}
+

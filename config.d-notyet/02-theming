@@ -1,0 +1,24 @@
+# Theme
+# ============================================================================
+# WARNING: DON'T CHANGE THE THEME HERE. 
+#          Instead, use ../definitions.d/02-theming
+
+# GTK
+# This is the only place where rou must set GTK scaling
+set $gnome-schema org.gnome.desktop.interface
+exec_always {
+  gsettings set $gnome-schema gtk-theme $system_theme
+  gsettings set $gnome-schema icon-theme $system_icons
+  gsettings set org.gnome.desktop.interface text-scaling-factor $system_dpi_scaling_factor
+  gsettings set $gnome-schema cursor-theme $cursor_theme
+  gsettings set org.gnome.desktop.interface cursor-size $cursor_size
+}
+
+# Mouse
+seat seat0 xcursor_theme $cursor_theme $cursor_size
+
+# Fonts (For sway window titles only)
+font pango:$titlebar_font $titlebar_text_size
+
+
+

@@ -1,0 +1,34 @@
+set $mode_shutdown "\
+<span foreground='$modes_secondary_color'></span>  \
+<span foreground='$modes_primary_color'> \
+<span foreground='$modes_secondary_color'>(<b>h</b>)</span>hibernate \
+<span foreground='$modes_secondary_color'>(<b>l</b>)</span>lock \
+<span foreground='$modes_secondary_color'>(<b>e</b>)</span>logout \
+<span foreground='$modes_secondary_color'>(<b>r</b>)</span>reboot \
+<span foreground='$modes_secondary_color'>(<b>s</b>)</span>suspend \
+<span foreground='$modes_secondary_color'>(<b>q</b>)</span>shutdown \
+</span>"
+
+mode --pango_markup $mode_shutdown {
+    # lock
+    $bindsym l mode "default", exec $locking
+
+    # logout
+    $bindsym e exec loginctl terminate-user $USER
+
+    # suspend
+    $bindsym s mode "default", exec systemctl suspend
+
+    # hibernate
+    $bindsym h mode "default", exec systemctl hibernate
+
+    # shutdown
+    $bindsym q exec systemctl poweroff
+
+    # reboot
+    $bindsym r exec systemctl reboot
+
+    # Return to default mode.
+    $bindsym Escape mode "default"
+}
+

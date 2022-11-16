@@ -1,0 +1,36 @@
+set $mode_screenshot "\
+<span foreground='$modes_secondary_color'></span>  \
+<span foreground='$modes_primary_color'> \
+<span foreground='$modes_secondary_color'>(<b>s</b>)</span>screen-up \
+<span foreground='$modes_secondary_color'>(<b>r</b>)</span>region-up \
+<span foreground='$modes_secondary_color'>(<b>w</b>)</span>window-up \
+<span foreground='$modes_secondary_color'>(<b>a</b>)</span>screen \
+<span foreground='$modes_secondary_color'>(<b>b</b>)</span>region \
+<span foreground='$modes_secondary_color'>(<b>c</b>)</span>window \
+</span>"
+mode --pango_markup $mode_screenshot {
+
+    # Screen (upload)
+    $bindsym s mode "default", exec swayshot display upload
+
+    # Region (upload)
+    $bindsym r mode "default", exec swayshot region upload
+
+    # Window (upload)
+    $bindsym w mode "default", exec swayshot window upload
+
+
+    # Screen (local)
+    $bindsym a mode "default", exec swayshot
+
+    # Region (local)
+    $bindsym b mode "default", exec swayshot region
+
+    # Window (local)
+    $bindsym c mode "default", exec swayshot window
+
+
+    # Return to default mode.
+    $bindsym Escape mode "default"
+}
+

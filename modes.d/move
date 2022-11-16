@@ -1,0 +1,23 @@
+set $mode_move "<span foreground='$modes_secondary_color'></span>  \
+<span foreground='$modes_primary_color'><b>Move</b></span> <span foreground='$modes_secondary_color'>(<b>h/j/k/l</b>)</span> \
+<span foreground='$modes_primary_color'><b>Exit mode</b></span> <span foreground='$modes_secondary_color'>(<b>ESC</b>)</span>"
+
+
+bindsym $mod+Shift+a mode "move"
+mode --pango_markup $mode_move {
+        # These bindings trigger as soon as you enter the 'move' mode
+        bindsym y move left 
+        bindsym n move down 
+        bindsym e move up 
+        bindsym o move right
+        
+        # same bindings, but for the arrow keys
+        bindsym Left move left 75 px
+        bindsym Down move down 75 px 
+        bindsym Up move up 75 px
+        bindsym Right move right 75 px
+
+        # exit resize mode: Enter or Escape
+        bindsym Return mode "default"
+        bindsym Escape mode "default"
+}

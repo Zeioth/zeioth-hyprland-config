@@ -1,0 +1,5 @@
+# Query the connected input methods: `swaymsg -t get_inputs | grep Wacom`
+# DOCS: To map wacom to the active screen do it in keybinds like:
+#       bindsym $mod+1 workspace $ws1 ; exec $map-to-active
+#       If you have that code on keybinds, just choose screen to enable it
+set $map-to-active swaymsg input type:tablet_tool map_to_output `swaymsg -t get_outputs | jq -r '.[] | select(.focused == true) | .name'`

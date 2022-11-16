@@ -1,0 +1,30 @@
+# PROGRAM ALIASES
+# ============================================================================
+
+# File edition
+set $tui_file_browser QT_SCALE_FACTOR=$system_dpi_scaling_factor ELM_SCALE=$system_dpi_scaling_factor GDK_SCALE=$system_dpi_scaling_factor TERMCMD="foot -a 'scratchpad'" $term_scratch_standalone ranger
+set $gui_file_browser QT_SCALE_FACTOR=$system_dpi_scaling_factor ELM_SCALE=$system_dpi_scaling_factor GDK_SCALE=$system_dpi_scaling_factor thunar
+
+set $vim_editor $term -T "vim - editor" "vim -S ~/.vim_runtime/temp_dirs/sessions/meta-editor.vim
+set $vim_backlog $term -T "vim - backlog" vim -S ~/.vim_runtime/temp_dirs/sessions/meta-backlogs.vim
+set $vim $term -T "vim - editor" vim
+
+# system aliases
+set $calc wofi-calc
+set $weather $term_scratch -T 'weather' weather
+set $backup_to_cloud $term_scratch ~/tweaks/sync-backup-to-cloud.sh
+set $update_packages $term_scratch update-packages
+set $help_keyboard $term_scratch vim -m ~/workspaces/git-forks/keyboards/qmk_firmware/keyboards/crkbd/rev1/common/keymaps/zeioth_trackball_right/README.md
+set $help_vim $term_scratch vim -m ~/workspaces/git-forks/keyboards/qmk_firmware/keyboards/crkbd/rev1/common/keymaps/zeioth_trackball_right/VIM-MANUAL.md
+set $update_mirrors $term_scratch 'update-mirrors'
+
+# swayr aliases
+set $swayr-wintab env RUST_BACKTRACE=1 swayr switch-workspace-or-window >> /tmp/swayr.log 2>&1
+set $swayr-xkill env RUST_BACKTRACE=1 swayr quit-window -k > /tmp/swayr.log 2>&1
+set $swayr-next env RUST_BACKTRACE=1 swayr next-window >> /tmp/swayr.log 2>&2
+set $swayr-prev env RUST_BACKTRACE=1 swayr prev-window >> /tmp/swayr.log 2>&2
+set $swayrd "env RUST_BACKTRACE=1 swayrd > /tmp/swayrd.log 2>&1"
+
+# extra system utils
+set $corectrl "QT_SCALE_FACTOR=$system_dpi_scaling_factor ELM_SCALE=$system_dpi_scaling_factor GDK_SCALE=$system_dpi_scaling_factor SAL_USE_VCLPLUGIN=gtk3 corectrl"
+#set $corectrl "$cursor_size*1 corectrl"
