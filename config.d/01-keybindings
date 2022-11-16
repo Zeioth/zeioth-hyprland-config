@@ -5,8 +5,7 @@
 # See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
 
 # See https://wiki.hyprland.org/Configuring/Keywords/ for more
-$mod = SUPER
-floating_modifier $alt normal
+
 
 
 # SYSTEM
@@ -15,6 +14,8 @@ floating_modifier $alt normal
 # ../aliases.d/00-system-aliases
 # ../aliases.d/01-program-aliases
 
+## Float // drag modifier ##
+floating_modifier $alt normal
 
 ## Launch // Terminal ##
 bind = $mod,       t,   exec, $term_scratch

@@ -8,16 +8,20 @@
 #############################################################
 
 # FOR ALL SCREENS (Use rbg subpixel, for antialiased, less sharp image)
-output * adaptive_sync on
-output * max_render_time 16
-output * subpixel none
+# output * adaptive_sync on
+# output * max_render_time 16
+# output * subpixel none
 
-output $screen1 mode 3840x2160@70.981Hz pos 0 0 scale 1 enable
-output $screen2 mode 3840x2160@70.981Hz pos 3840 0 scale 1 enable
-output $screen3 mode 3840x2160@70.981Hz pos 7680 0 scale 1 enable
-output $screen4 mode 3840x2160@70.981Hz pos 0 2160 scale 1 enable
-output $screen5 mode 3840x2160@70.981Hz pos 3840 2160 scale 1 enable
-output $screen6 mode 3840x2160@70.981Hz pos 7680 2160 scale 1 enable
+# See https://wiki.hyprland.org/Configuring/Monitors/
+monitor = ,preferred,auto,1
+
+
+#output $screen1 mode 3840x2160@70.981Hz pos 0 0 scale 1 enable
+#output $screen2 mode 3840x2160@70.981Hz pos 3840 0 scale 1 enable
+#output $screen3 mode 3840x2160@70.981Hz pos 7680 0 scale 1 enable
+#output $screen4 mode 3840x2160@70.981Hz pos 0 2160 scale 1 enable
+#output $screen5 mode 3840x2160@70.981Hz pos 3840 2160 scale 1 enable
+#output $screen6 mode 3840x2160@70.981Hz pos 7680 2160 scale 1 enable
 # EXAMPLE: output * transform 180 → in case you wanna rotate
 
 workspace 1 output $screen4

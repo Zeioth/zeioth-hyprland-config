@@ -10,12 +10,12 @@ Zeioth's personal hyprland congfiguration
  Files and directories:
  \fBconfig\fP    Entry point file. Includes the other configs.
  \fBautostart.d\fP  Programs to run on startup.
- \fBaliases.d\fP  Commands we use in the configs.
+ \fBvariables.d\fP  Commands we use in the configs.
  \fBconfig.d\fP   Hyprland settings.
  \fBhardware.d\fP hardware settings.
  \fBmodes.d\fP    keyboard modes.
 .SH EXAMPLES
- \fB1)\fP Add an alias to the file you choose on     \fB→ ./aliases.d\fP
+ \fB1)\fP Add a variable to the file you choose on     \fB→ ./variables.d\fP
  \fB2)\fP Call it from a configuration you choose in \fB→ ./config.d\fP
  \fB3)\fP You can also call modes from               \fB→ ./config.d/keybindings \fP
 .SH BUGS
