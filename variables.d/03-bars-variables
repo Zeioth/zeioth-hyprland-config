@@ -3,20 +3,20 @@
 # Feel free to move any entry here to ./01-program-variables
 
 # Waybar programs
-$khal $term_scratch khal interactive
-$sys_monitor $term_scratch htop
-$network_manager $term_scratch nmtui
-$audio_mixer term_scratch pulsemixer
-$audio_mute_toggle pactl set-sink-mute @DEFAULT_SINK@ toggle  
-$sensors $term_scratch watch sensors
-$pamac_waybar pamac-manager --updates; pkill -RTMIN+4 waybar
+$khal              = $term_scratch khal interactive
+$sys_monitor       = $term_scratch htop
+$network_manager   = $term_scratch nmtui
+$audio_mixer       = term_scratch pulsemixer
+$audio_mute_toggle = pactl set-sink-mute @DEFAULT_SINK@ toggle  
+$sensors           = $term_scratch watch sensors
+$pamac_waybar      = pamac-manager --updates; pkill -RTMIN+4 waybar
 
 
 # Waybar commands
-$select_next_keyboard_layout input $(swaymsg -t get_inputs --raw | jq '[.[] | select(.type == \"keyboard\")][0] | .identifier') xkb_switch_layout next
-$sunset_toggle ~/.local/bin/sunset.sh toggle; pkill -RTMIN+6 waybar
-$record_desktop_toggle killall -s SIGINT wf-recorder
-$record_desktop_visual_feedback echo '{\"class\": \"recording\",\"text\":\"雷\",\"tooltip\":\"press $mod+Esc to stop recording\"}
-$github_open_notifications_browser xdg-open https://github.com/notifications && sleep 30 && pkill -RTMIN+4 waybar
-$clipboard_open cliphist list | wofi --show dmenu -p clipboard | cliphist decode | wl-copy; pkill -RTMIN+9 waybar
-$clipboard_clear rm -f ~/.cache/cliphist/db; pkill -RTMIN+9 waybar
+$select_next_keyboard_layout       = input $(swaymsg -t get_inputs --raw | jq '[.[] | select(.type == \"keyboard\")][0] | .identifier') xkb_switch_layout next
+$sunset_toggle                     = ~/.local/bin/sunset.sh toggle; pkill -RTMIN+6 waybar
+$record_desktop_toggle             = killall -s SIGINT wf-recorder
+$record_desktop_visual_feedback    = echo '{\"class\": \"recording\",\"text\":\"雷\",\"tooltip\":\"press $mod+Esc to stop recording\"}
+$github_open_notifications_browser = xdg-open https://github.com/notifications && sleep 30 && pkill -RTMIN+4 waybar
+$clipboard_open                    = cliphist list | wofi --show dmenu -p clipboard | cliphist decode | wl-copy; pkill -RTMIN+9 waybar
+$clipboard_clear                   = rm -f ~/.cache/cliphist/db; pkill -RTMIN+9 waybar

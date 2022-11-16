@@ -1,6 +1,9 @@
 # SYSTEM VARIABLES
 # ============================================================================
 
+# Mod key
+$mod = SUPER
+
 # Terminal emulator
 $term                    = footclient -t xterm-256color
 $term_scratch            = footclient -t xterm-256color -a scratchpad
@@ -15,19 +18,14 @@ $screen4 = DP-3
 $screen5 = DP-4
 $screen6 = DP-5
 
-# Dead keys
-$mod = Mod4
-$alt = Mod1
-$ctrl = Control
-
 # Launcher
-$launcher "QT_SCALE_FACTOR=$system_dpi_scaling_factor ELM_SCALE=$system_dpi_scaling_factor GDK_SCALE=$system_dpi_scaling_factor SAL_USE_VCLPLUGIN=gtk3 wofi -p 'run'"
+$launcher = "QT_SCALE_FACTOR=$system_dpi_scaling_factor ELM_SCALE=$system_dpi_scaling_factor GDK_SCALE=$system_dpi_scaling_factor SAL_USE_VCLPLUGIN=gtk3 wofi -p 'run'"
 
 # Notification daemon configuration
-$notifications mako
+$notifications = mako
 
 # Widgets - Note: A widget cannot leave it display, but you can create many.
-$desktop_widgets nwg-wrapper \
+$desktop_widgets = nwg-wrapper \
     -o $screen5 \
     -s anime-op.sh \
     -r 5000 \
@@ -40,7 +38,7 @@ $desktop_widgets nwg-wrapper \
     --layer 1
 
 # Locker widgets →  [requires swaylock-effects]
-$lock_widget pkill -2 -f nwg-wrapper & \
+$lock_widget = pkill -2 -f nwg-wrapper & \
     nwg-wrapper -s locker-clock.sh \
     -o $screen5 \
     -r 10000 \
@@ -54,7 +52,7 @@ $lock_widget pkill -2 -f nwg-wrapper & \
     sleep 0.50 && 
 
 # Locking
-$locking $lock_widget swaylock \
+$locking = $lock_widget swaylock \
     --color "#282a2b" \
     --inside-color "#282a2b" \
     --inside-clear-color "#eeeeee" \
@@ -73,7 +71,7 @@ $locking $lock_widget swaylock \
     pkill -f -2 locker-clock && exec $desktop_widgets
 
 ### Idle configuration →  [requires swaylock-effects sway-audio-idle-inhibit]
-$idle sway-audio-idle_inhibit && swayidle -w \
+$idle = sway-audio-idle_inhibit && swayidle -w \
     timeout 240 'light -G > /tmp/brightness && light -S 10' resume 'light -S $([ -f /tmp/brightness ] && cat /tmp/brightness || echo 100%)' \
     timeout 900 'exec $locking' \
     timeout 2600000 'swaymsg "output * dpms off"' \
@@ -86,38 +84,38 @@ $idle sway-audio-idle_inhibit && swayidle -w \
 # sleep 0.25 && swaylock --image /home/piotr/Obrazy/Wallpapers/wallhaven-kwxjl6-1920x1080.jpg && pkill -f -2 nwg-wrapper
 
 # Volume (speakers)
-$wob_socket $XDG_RUNTIME_DIR/wob.sock # Used like $wob_socket <number>
-$sink_volume pactl get-sink-volume @DEFAULT_SINK@ | grep '^Volume:' | cut -d / -f 2 | tr -d ' ' | sed 's/%//'
-$sink_volume_mute pactl get-sink-mute @DEFAULT_SINK@ | sed -En "/no/ s/.*/$($sink_volume)/p; /yes/ s/.*/0/p"
+$wob_socket       = $XDG_RUNTIME_DIR/wob.sock # Used like $wob_socket <number>
+$sink_volume      = pactl get-sink-volume @DEFAULT_SINK@ | grep '^Volume:' | cut -d / -f 2 | tr -d ' ' | sed 's/%//'
+$sink_volume_mute = pactl get-sink-mute @DEFAULT_SINK@ | sed -En "/no/ s/.*/$($sink_volume)/p; /yes/ s/.*/0/p"
 
 # Volume (microphone)
-$source_volume pactl get-source-volume @DEFAULT_SOURCE@ | grep '^Volume:' | cut -d / -f 2 | tr -d ' ' | sed 's/%//'
-$sink_microphone_volume_mute pactl get-source-mute @DEFAULT_SOURCE@ | sed -En "/no/ s/.*/$($source_volume)/p; /yes/ s/.*/0/p" 
+$source_volume               = pactl get-source-volume @DEFAULT_SOURCE@ | grep '^Volume:' | cut -d / -f 2 | tr -d ' ' | sed 's/%//'
+$sink_microphone_volume_mute = pactl get-source-mute @DEFAULT_SOURCE@ | sed -En "/no/ s/.*/$($source_volume)/p; /yes/ s/.*/0/p" 
 
 # Other system artifacts
-$systemctl_env "systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK"
-$dbus_env "hash dbus-update-activation-environment 2>/dev/null && dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK"
-$gnome_polkit "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-$swayd "env RUST_BACKTRACE=1 swayrd > /tmp/swayrd.log 2>&1"
-$update_mirrors "update_mirrors"
-$idle_inhibit "sway-audio-idle-inhibit"
-$flashfocus "flashfocus"
-$sun"$HOME/.local/bin/sunset.sh 'on'"
-$foot_server "foot --server"
-$swork_style "pkill sworkstyle; sworkstyle &> /tmp/sworkstyle.log"
-$wl_paste_polling  "wl-paste --watch cliphist store" # → [cliphist]
-$spice_vdagent "spice-vdagent" # → Used by qemu to share clipboard on X systems.
+$systemctl_env    = "systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK"
+$dbus_env         = "hash dbus-update-activation-environment 2>/dev/null && dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK"
+$gnome_polkit     = "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+$swayd            = "env RUST_BACKTRACE=1 swayrd > /tmp/swayrd.log 2>&1"
+$update_mirrors   = "update_mirrors"
+$idle_inhibit     = "sway-audio-idle-inhibit"
+$flashfocus       = "flashfocus"
+$sun              = "$HOME/.local/bin/sunset.sh 'on'"
+$foot_server      = "foot --server"
+$swork_style      = "pkill sworkstyle; sworkstyle &> /tmp/sworkstyle.log"
+$wl_paste_polling = "wl-paste --watch cliphist store" # → [cliphist]
+$spice_vdagent    = "spice-vdagent" # → Used by qemu to share clipboard on X systems.
 
-# Support for non-latin layouts in keybindings.
-$bindsym bindsym --to-code
-$unbindsym unbindsym --to-code
+# Support for non-latin layouts in keybindings. TODO: Migrate to hyprland
+# $bindsym = bindsym --to-code
+# $unbindsym = unbindsym --to-code
 
-# workspace name aliases
-$ws1 number 1
-$ws2 number 2
-$ws3 number 3
-$ws4 number 4
-$ws5 number 5
-$ws6 number 6
-$ws7 number 7
-$ws8 number 8
+# workspace name (to display on waybar)
+$ws1 = 1
+$ws2 = 2
+$ws3 = 3
+$ws4 = 4
+$ws5 = 5
+$ws6 = 6
+$ws7 = 7
+$ws8 = 8

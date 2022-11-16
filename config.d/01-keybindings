@@ -7,15 +7,14 @@
 # See https://wiki.hyprland.org/Configuring/Keywords/ for more
 
 
-
 # SYSTEM
 # ============================================================================
 # Definitions files: 
 # ../aliases.d/00-system-aliases
 # ../aliases.d/01-program-aliases
 
-## Float // drag modifier ##
-floating_modifier $alt normal
+## Float // drag modifier ## TODO: Migrate to hyprland
+# floating_modifier $alt normal
 
 ## Launch // Terminal ##
 bind = $mod,       t,   exec, $term_scratch
@@ -83,8 +82,9 @@ bind = $mod SHIFT, 8, move container to workspace, $ws8, workspace, $ws8
 # LAYOUT
 # ============================================================================
 
-# Setting // Split windows horizontally ##
+## Setting // Split windows horizontally ##
 bind = $mod, b, splith
+
 ## Setting // Split windows vertically ##
 bind = $mod, v, splitv
 

@@ -2,29 +2,28 @@
 # ============================================================================
 
 # File edition
-$tui_file_browser QT_SCALE_FACTOR=$system_dpi_scaling_factor ELM_SCALE=$system_dpi_scaling_factor GDK_SCALE=$system_dpi_scaling_factor TERMCMD="foot -a 'scratchpad'" $term_scratch_standalone ranger
-$gui_file_browser QT_SCALE_FACTOR=$system_dpi_scaling_factor ELM_SCALE=$system_dpi_scaling_factor GDK_SCALE=$system_dpi_scaling_factor thunar
+$tui_file_browser = QT_SCALE_FACTOR=$system_dpi_scaling_factor ELM_SCALE=$system_dpi_scaling_factor GDK_SCALE=$system_dpi_scaling_factor TERMCMD="foot -a 'scratchpad'" $term_scratch_standalone ranger
+$gui_file_browser = QT_SCALE_FACTOR=$system_dpi_scaling_factor ELM_SCALE=$system_dpi_scaling_factor GDK_SCALE=$system_dpi_scaling_factor thunar
 
-$vim_editor $term -T "vim - editor" "vim -S ~/.vim_runtime/temp_dirs/sessions/meta-editor.vim
-$vim_backlog $term -T "vim - backlog" vim -S ~/.vim_runtime/temp_dirs/sessions/meta-backlogs.vim
-$vim $term -T "vim - editor" vim
+$vim_editor  = $term -T "vim - editor" "vim -S ~/.vim_runtime/temp_dirs/sessions/meta-editor.vim
+$vim_backlog = $term -T "vim - backlog" vim -S ~/.vim_runtime/temp_dirs/sessions/meta-backlogs.vim
+$vim         = $term -T "vim - editor" vim
 
 # system aliases
-$calc wofi-calc
-$weather $term_scratch -T 'weather' weather
-$backup_to_cloud $term_scratch ~/tweaks/sync-backup-to-cloud.sh
-$update_packages $term_scratch update-packages
-$help_keyboard $term_scratch vim -m ~/workspaces/git-forks/keyboards/qmk_firmware/keyboards/crkbd/rev1/common/keymaps/zeioth_trackball_right/README.md
-$help_vim $term_scratch vim -m ~/workspaces/git-forks/keyboards/qmk_firmware/keyboards/crkbd/rev1/common/keymaps/zeioth_trackball_right/VIM-MANUAL.md
-$update_mirrors $term_scratch 'update-mirrors'
+$calc            = wofi-calc
+$weather         = $term_scratch -T 'weather' weather
+$backup_to_cloud = $term_scratch ~/tweaks/sync-backup-to-cloud.sh
+$update_packages = $term_scratch update-packages
+$help_keyboard   = $term_scratch vim -m ~/workspaces/git-forks/keyboards/qmk_firmware/keyboards/crkbd/rev1/common/keymaps/zeioth_trackball_right/README.md
+$help_vim        = $term_scratch vim -m ~/workspaces/git-forks/keyboards/qmk_firmware/keyboards/crkbd/rev1/common/keymaps/zeioth_trackball_right/VIM-MANUAL.md
+$update_mirrors  = $term_scratch 'update-mirrors'
 
 # swayr aliases
-$swayr-wintab env RUST_BACKTRACE=1 swayr switch-workspace-or-window >> /tmp/swayr.log 2>&1
-$swayr-xkill env RUST_BACKTRACE=1 swayr quit-window -k > /tmp/swayr.log 2>&1
-$swayr-next env RUST_BACKTRACE=1 swayr next-window >> /tmp/swayr.log 2>&2
-$swayr-prev env RUST_BACKTRACE=1 swayr prev-window >> /tmp/swayr.log 2>&2
-$swayrd "env RUST_BACKTRACE=1 swayrd > /tmp/swayrd.log 2>&1"
+$swayr-wintab    = env RUST_BACKTRACE=1 swayr switch-workspace-or-window >> /tmp/swayr.log 2>&1
+$swayr-xkill     = env RUST_BACKTRACE=1 swayr quit-window -k > /tmp/swayr.log 2>&1
+$swayr-next      = env RUST_BACKTRACE=1 swayr next-window >> /tmp/swayr.log 2>&2
+$swayr-prev      = env RUST_BACKTRACE=1 swayr prev-window >> /tmp/swayr.log 2>&2
+$swayrd          = "env RUST_BACKTRACE=1 swayrd > /tmp/swayrd.log 2>&1"
 
 # extra system utils
-$corectrl "QT_SCALE_FACTOR=$system_dpi_scaling_factor ELM_SCALE=$system_dpi_scaling_factor GDK_SCALE=$system_dpi_scaling_factor SAL_USE_VCLPLUGIN=gtk3 corectrl"
-#$corectrl "$cursor_size*1 corectrl"
+$corectrl="QT_SCALE_FACTOR=$system_dpi_scaling_factor ELM_SCALE=$system_dpi_scaling_factor GDK_SCALE=$system_dpi_scaling_factor SAL_USE_VCLPLUGIN=gtk3 corectrl"

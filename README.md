@@ -3,11 +3,12 @@ Clone the directory into `~/.config` and use it as base for your config. Or just
 
 ## FEATURES
 
- * pre-binded modes to take `screenshots` (and upload to cloud if wanted), `change resolution` on the fly `move`, `resize`, `shutdown menu`.
- * all aliases in one place.
+ * pre-binded modes to manage `screenshots` (local and/or to the cloud),
+  `displays`, `move`, `resize`, `shutdown`.
+ * variables isolated from the rest of the config.
  * feature rich. Delete what you don't need.
 
-## YOU MUST 
+## YOU MUST
 
 * Go to `./aliases.d/01-system-aliases` and replace the display name with yours.
 * Go to `./hardware.d/displays` and setup your displays there
@@ -27,7 +28,7 @@ You can go into `./modes.d/displays` and modify the file to work as you desire. 
 # FAQ
 
 * **How to debug**: On hyprland.conf, comment all lines except one. Then uncomment the next one. Until everything works.
-* **Why not just have everything into just a single config file?** You certainly can. 
+* **Why not just have everything into just a single config file?** You certainly can.
     I prefer to separate it into files so it's easier to find the stuff.
 
 # HOW TO USE MAN

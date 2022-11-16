@@ -15,7 +15,7 @@ $cursor_theme       = Adwaita
 $titlebar_text_size = 32
 $titlebar_font      = Cantarell
 
-# BACKGROUNDS
+# BACKGROUNDS (requires hyprpaper-git)
 $background1 = ~/images/backgrounds/tokyo-night-manjarosway-3840x2160.png
 $background2 = ~/images/backgrounds/minimal_squares.png
 $background3 = ~/images/backgrounds/tokyo-night-manjarosway-3840x2160.png
@@ -31,14 +31,14 @@ $background6 = ~/images/backgrounds/tokyonight.png
 $modes_primary_color   = #d8dee8
 $modes_secondary_color = #e6cd69
 
-# WINDOWS AND BORDERS
+# WINDOWS AND BORDERS (TODO: migrate to hyprland)
 # -------------------------------------------------
 # TokyoNight theme
 # Property Name             Border  BG      Text    Indicator Child-border
-client.focused              #0a0b16 #2f343f #4477ff #4477ff   #4477ff
-client.focused_inactive     #2f343f #2f343f #d8dee8 #2f343f   #2f343f
-client.unfocused            #2f343f #2f343f #d8dee8 #2f343f   #2f343f
-client.urgent               #2f343f #2f343f #d8dee8 #2f343f   #2f343f
-client.placeholder          #2f343f #2f343f #d8dee8 #2f343f   #2f343f
-client.background           #2f343f
+# client.focused              #0a0b16 #2f343f #4477ff #4477ff   #4477ff
+# client.focused_inactive     #2f343f #2f343f #d8dee8 #2f343f   #2f343f
+# client.unfocused            #2f343f #2f343f #d8dee8 #2f343f   #2f343f
+# client.urgent               #2f343f #2f343f #d8dee8 #2f343f   #2f343f
+# client.placeholder          #2f343f #2f343f #d8dee8 #2f343f   #2f343f
+# client.background           #2f343f
 
