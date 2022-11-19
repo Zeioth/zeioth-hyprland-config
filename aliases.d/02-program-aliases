@@ -23,7 +23,7 @@ $swayr-wintab    = env RUST_BACKTRACE=1 swayr switch-workspace-or-window >> /tmp
 $swayr-xkill     = env RUST_BACKTRACE=1 swayr quit-window -k > /tmp/swayr.log 2>&1
 $swayr-next      = env RUST_BACKTRACE=1 swayr next-window >> /tmp/swayr.log 2>&2
 $swayr-prev      = env RUST_BACKTRACE=1 swayr prev-window >> /tmp/swayr.log 2>&2
-$swayrd          = "env RUST_BACKTRACE=1 swayrd > /tmp/swayrd.log 2>&1"
+$swayrd          = env RUST_BACKTRACE=1 swayrd > /tmp/swayrd.log 2>&1"
 
 # extra system utils
 $corectrl="QT_SCALE_FACTOR=$system_dpi_scaling_factor ELM_SCALE=$system_dpi_scaling_factor GDK_SCALE=$system_dpi_scaling_factor SAL_USE_VCLPLUGIN=gtk3 corectrl"

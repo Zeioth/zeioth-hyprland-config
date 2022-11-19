@@ -24,24 +24,23 @@ bind = $mod SHIFT, t,   exec, foot-tmux
 bind = $mod,       d,   exec, $launcher
 
 ## Action // Kill focused window ##
-bind = $mod SHIFT, q,   kill
+bind = $mod SHIFT, q,   killactive
 
 ## Action // Reload hyprland Configuration ##
-bind = $mod SHIFT, c, reload
-
+bind = $mod SHIFT, c, exec, reload, forcerendererreload 
 ## System keys
-bind = XF86AudioRaiseVolume,   exec, pactl set-sink-volume @DEFAULT_SINK@ +5% && $sink_volume > $wob_socket
-bind = XF86AudioLowerVolume,   exec, pactl set-sink-volume @DEFAULT_SINK@ -5% && $sink_volume > $wob_socket
-bind = XF86AudioMute,          exec, pactl set-sink-mute @DEFAULT_SINK@ toggle       && $sink_volume_mute > $wob_socket
-bind = XF86AudioMicMute,       exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle && $set_sink_microphone_mute > $wob_socket
-bind = XF86MonBrightnessUp,    exec, light -A 5 && $onscreen_bar $(light -G | cut -d'.' -f1)
-bind = XF86MonBrightnessDown,  exec, light -U 5 && $onscreen_bar $(light -G | cut -d'.' -f1)
-bind = XF86AudioPlay,          exec, playerctl play-pause
-bind = XF86AudioNext,          exec, playerctl next
-bind = XF86AudioPrev,          exec, playerctl previous
-bind = XF86Search,             exec, $menu
-bind = XF86PowerOff,           exec, $shutdown
-# bind = XF86TouchpadToggle,   input, type:touchpad events toggle enabled disabled #  LEGACY from sway, fix it if you ever need it.
+binde =, XF86AudioRaiseVolume,   exec, pactl set-sink-volume @DEFAULT_SINK@ +5% && $sink_volume > $wob_socket
+binde =, XF86AudioLowerVolume,   exec, pactl set-sink-volume @DEFAULT_SINK@ -5% && $sink_volume > $wob_socket
+bind =, XF86AudioMute,          exec, pactl set-sink-mute @DEFAULT_SINK@ toggle       && $sink_volume_mute > $wob_socket
+# bind = XF86AudioMicMute,       exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle && $set_sink_microphone_mute > $wob_socket
+# bind = XF86MonBrightnessUp,    exec, light -A 5 && $onscreen_bar $(light -G | cut -d'.' -f1)
+# bind = XF86MonBrightnessDown,  exec, light -U 5 && $onscreen_bar $(light -G | cut -d'.' -f1)
+# bind = XF86AudioPlay,          exec, playerctl play-pause
+# bind = XF86AudioNext,          exec, playerctl next
+# bind = XF86AudioPrev,          exec, playerctl previous
+# bind = XF86Search,             exec, $menu
+# bind = XF86PowerOff,             exec, $shutdown
+## bind = XF86TouchpadToggle,   input, type:touchpad events toggle enabled disabled #  LEGACY from sway, fix it if you ever need it.
 
 
 # FOCUS
@@ -59,61 +58,61 @@ bind = XF86PowerOff,           exec, $shutdown
 # ============================================================================
 
 ## Navigation // Switch workspace // $mod + [number] ##
-bind = $mod, 1, workspace, $ws1, exec, $map-to-active
-bind = $mod, 2, workspace, $ws2, exec, $map-to-active
-bind = $mod, 3, workspace, $ws3, exec, $map-to-active
-bind = $mod, 4, workspace, $ws4, exec, $map-to-active
-bind = $mod, 5, workspace, $ws5, exec, $map-to-active
-bind = $mod, 6, workspace, $ws6, exec, $map-to-active
-bind = $mod, 7, workspace, $ws7, exec, $map-to-active
-bind = $mod, 8, workspace, $ws8, exec, $map-to-active
+## Note: workspaces are asociated ot monitors on ../hardware.d/displays
+bind = $mod, 1, workspace, 1
+bind = $mod, 2, workspace, 2
+bind = $mod, 3, workspace, 3
+bind = $mod, 4, workspace, 4
+bind = $mod, 5, workspace, 5
+bind = $mod, 6, workspace, 6
+bind = $mod, 7, workspace, 7
+bind = $mod, 8, workspace, 8
 
 ## Action // Move focussed window to workspace // $mod + Shift + [number] ##
-bind = $mod SHIFT, 1, move container to workspace, $ws1, workspace, $ws1
-bind = $mod SHIFT, 2, move container to workspace, $ws2, workspace, $ws2
-bind = $mod SHIFT, 3, move container to workspace, $ws3, workspace, $ws3
-bind = $mod SHIFT, 4, move container to workspace, $ws4, workspace, $ws4
-bind = $mod SHIFT, 5, move container to workspace, $ws5, workspace, $ws5
-bind = $mod SHIFT, 6, move container to workspace, $ws6, workspace, $ws6
-bind = $mod SHIFT, 7, move container to workspace, $ws7, workspace, $ws7
-bind = $mod SHIFT, 8, move container to workspace, $ws8, workspace, $ws8
-
+bind = $mod SHIFT, 1, movetoworkspace, 1
+bind = $mod SHIFT, 2, movetoworkspace, 2
+bind = $mod SHIFT, 3, movetoworkspace, 3
+bind = $mod SHIFT, 4, movetoworkspace, 4
+bind = $mod SHIFT, 5, movetoworkspace, 5
+bind = $mod SHIFT, 6, movetoworkspace, 6
+bind = $mod SHIFT, 7, movetoworkspace, 7
+bind = $mod SHIFT, 8, movetoworkspace, 8
 
 # LAYOUT
 # ============================================================================
 
-## Setting // Split windows horizontally ##
-bind = $mod, b, splith
+# ## Setting // Split windows horizontally ##
+# bind = $mod, b, splith
 
-## Setting // Split windows vertically ##
-bind = $mod, v, splitv
+# ## Setting // Split windows vertically ##
+# bind = $mod, v, splitv
 
-## Action // Switch to window stacking ##
-bind = $mod, s, layout stacking
+# ## Action // Switch to window stacking ##
+# bind = $mod, s, layout stacking
 
-## Action // Switch to window tabbing ##
-bind = $mod, w, layout tabbed
+# ## Action // Switch to window tabbing ##
+# bind = $mod, w, layout tabbed
 
-## Action // Toggle window splitting ##
-bind = $mod, e, layout toggle split
+# ## Action // Toggle window splitting ##
+# bind = $mod, e, layout toggle split
 
-## Action // Toggle fullscreen ##
+# ## Action // Toggle fullscreen ##
 bind = $mod, f, fullscreen
 
-## Action // Toggle fullscreen across all monitors##
-bind = $mod SHIFT, f, fullscreen global
+# ## Action // Toggle fullscreen across all monitors##
+# bind = $mod SHIFT, f, fullscreen global
 
-## Action // Toggle floating ##
-bind = $mod SHIFT, space floating toggle
+# ## Action // Toggle floating ##
+bind = $mod SHIFT, space, togglefloating
 
-## Navigation // Toggle focus between tiling and floating ##
-bind = $mod, space, focus mode_toggle
+# ## Navigation // Toggle focus between tiling and floating ##
+# bind = $mod, space, focus mode_toggle
 
-## Navigation // Swap focus to the parent window ##
-bind = $mod, a, focus parent
+# ## Navigation // Swap focus to the parent window ##
+# bind = $mod, a, focus parent
 
-## Quick lock
-bind = $mod SHIFT, l, exec, $locking
+# ## Quick lock
+# bind = $mod SHIFT, l, exec, $locking
 
 
 # UTILITIES
@@ -139,30 +138,30 @@ bind = $mod,         F11, exec, $backup_to_cloud
 bind = $mod CTRL,    e,   exec, wofi-emoji
 
 # Swayr (Show running windows and more)
-bind = $mod,         tab,   exec, $swayr-wintab
-bind = $mod SHIFT,   x,     exec, $swayr-xkill
-bind = $mod,         next,  exec  $swayr-next
-bind = $mod,         prior, exec  $swayr-prev
+# bind = $mod,         tab,   exec, $swayr-wintab
+# bind = $mod SHIFT,   x,     exec, $swayr-xkill
+# bind = $mod,         next,  exec  $swayr-next
+# bind = $mod,         prior, exec  $swayr-prev
 
-# SCRATCHPAD
-# ============================================================================
-# Sway has a "scratchpad", which is a bag of holding for windows.
-# You can send windows there and get them back later.
+# # SCRATCHPAD
+# # ============================================================================
+# # Sway has a "scratchpad", which is a bag of holding for windows.
+# # You can send windows there and get them back later.
 
-## Action // Move window to scratchpad ##
-bind = $mod SHIFT, minus, move scratchpad, exec "pkill -RTMIN+7 waybar"
+# ## Action // Move window to scratchpad ##
+# bind = $mod SHIFT, minus, move scratchpad, exec "pkill -RTMIN+7 waybar"
 
-# If there are multiple scratchpad windows, this command cycles through them.
-## Action // Toggle scratchpad ##
-bind = $mod,       minus, scratchpad show, exec "pkill -RTMIN+7 waybar"
+# # If there are multiple scratchpad windows, this command cycles through them.
+# ## Action // Toggle scratchpad ##
+# bind = $mod,       minus, scratchpad show, exec "pkill -RTMIN+7 waybar"
 
-# MODES
-# ============================================================================
-bind = $mod SHIFT,  a,     mode $mode_move
-bind = $mod,        r,     mode $mode_resize
-bind = $mod SHIFT   e,     mode $mode_shutdown
-bind = $mod SHIFT,  s,     mode $mode_screenshot
-bind = $mod SHIFT,  d,     mode $mode_displays
+# # MODES
+# # ============================================================================
+# bind = $mod SHIFT,  a,     mode $mode_move
+# bind = $mod,        r,     mode $mode_resize
+# bind = $mod SHIFT,  e,     mode $mode_shutdown
+# bind = $mod SHIFT,  s,     mode $mode_screenshot
+# bind = $mod SHIFT,  d,     mode $mode_displays
 
 ## Launch // Recording Mode ##
 #bind = $mod+Shift+r mode $mode_recording

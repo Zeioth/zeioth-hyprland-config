@@ -14,11 +14,14 @@ exec {
   gsettings set org.gnome.desktop.interface cursor-size $cursor_size
 }
 
-# Mouse - TODO: Migrate to hyprland
+# Mouse
+exec-once=hyprctl setcursor $cursor_theme $cursor_size
+ 
 # seat seat0 xcursor_theme $cursor_theme $cursor_size
 
 # Fonts (For sway window titles only) - TODO: Migrate to hyprland
 # font pango:$titlebar_font $titlebar_text_size
 
 
-
+# Enable this if you are gonna use personalized backgrounds
+# disable_hyprland_logo

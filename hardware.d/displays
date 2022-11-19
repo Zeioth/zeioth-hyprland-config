@@ -7,34 +7,26 @@
 # You can get the names of your outputs by running: hyprctl monitors
 # #############################################################
 
-# NOT SUPPORTED YET ON 
+# NOT SUPPORTED YET ON HYPRLAND (Maybe they are not needed at all)
 # FOR ALL SCREENS (Use rbg subpixel, for antialiased, less sharp image)
 # output * adaptive_sync on
 # output * max_render_time 16
 # output * subpixel none
 
 # See https://wiki.hyprland.org/Configuring/Monitors/
-monitor = $screen1,3840x2160@70,0x0,1,enable,bitdepth,10
-monitor = $screen2,3840x2160@70,3840x0,1,enable,bitdepth,10
-monitor = $screen3,3840x2160@70,7680x0,1,enable,bitdepth,10
-monitor = $screen4,3840x2160@70,0x2160,1,enable,bitdepth,10
-monitor = $screen5,3840x2160@70,3840x2160,1,enable,bitdepth,10
-monitor = $screen6,3840x2160@70,7680x2160,1,enable,bitdepth,10
+monitor = $screen1,3840x2160@60,0x0,1,bitdepth,10
+monitor = $screen2,3840x2160@60,3840x0,1,bitdepth,10
+monitor = $screen3,3840x2160@60,7680x0,1,bitdepth,10
+monitor = $screen4,3840x2160@60,0x2160,1,bitdepth,10
+monitor = $screen5,3840x2160@60,3840x2160,1,bitdepth,10
+monitor = $screen6,3840x2160@60,7680x2160,1,bitdepth,10
 
 # Workspaces
-workspace $screen4,1
-workspace $screen5,2
-workspace $screen6,3
-workspace $screen1,4
-workspace $screen2,5
-workspace $screen3,6
-
-# Default wallpaper
-wallpaper = $screen1,$background1
-wallpaper = $screen2,$background2
-wallpaper = $screen3,$background3
-wallpaper = $screen4,$background4
-wallpaper = $screen5,$background5
-wallpaper = $screen6,$background6
+wsbind = 1,$screen4
+wsbind = 2,$screen5
+wsbind = 3,$screen6
+wsbind = 4,$screen1
+wsbind = 5,$screen2
+wsbind = 6,$screen3
 
 

@@ -9,6 +9,7 @@ $term                    = footclient -t xterm-256color
 $term_scratch            = footclient -t xterm-256color -a scratchpad
 $term_scratch_standalone = foot -a scratchpad
 $tmux                    = foot-tmux
+$foot_server             = foot --server
 
 # Displays
 $screen1 = DP-1
@@ -19,7 +20,7 @@ $screen5 = DP-4
 $screen6 = DP-5
 
 # Launcher
-$launcher = "QT_SCALE_FACTOR=$system_dpi_scaling_factor ELM_SCALE=$system_dpi_scaling_factor GDK_SCALE=$system_dpi_scaling_factor SAL_USE_VCLPLUGIN=gtk3 wofi -p 'run'"
+$launcher = QT_SCALE_FACTOR=$system_dpi_scaling_factor ELM_SCALE=$system_dpi_scaling_factor GDK_SCALE=$system_dpi_scaling_factor SAL_USE_VCLPLUGIN=gtk3 wofi -p run
 
 # Notification daemon configuration
 $notifications = mako
@@ -93,18 +94,17 @@ $source_volume               = pactl get-source-volume @DEFAULT_SOURCE@ | grep '
 $sink_microphone_volume_mute = pactl get-source-mute @DEFAULT_SOURCE@ | sed -En "/no/ s/.*/$($source_volume)/p; /yes/ s/.*/0/p" 
 
 # Other system artifacts
-$systemctl_env    = "systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK"
-$dbus_env         = "hash dbus-update-activation-environment 2>/dev/null && dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK"
-$gnome_polkit     = "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
-$swayd            = "env RUST_BACKTRACE=1 swayrd > /tmp/swayrd.log 2>&1"
-$update_mirrors   = "update_mirrors"
-$idle_inhibit     = "sway-audio-idle-inhibit"
-$flashfocus       = "flashfocus"
-$sun              = "$HOME/.local/bin/sunset.sh 'on'"
-$foot_server      = "foot --server"
-$swork_style      = "pkill sworkstyle; sworkstyle &> /tmp/sworkstyle.log"
-$wl_paste_polling = "wl-paste --watch cliphist store" # → [cliphist]
-$spice_vdagent    = "spice-vdagent" # → Used by qemu to share clipboard on X systems.
+$systemctl_env    = systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+$dbus_env         = hash dbus-update-activation-environment 2>/dev/null && dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+$gnome_polkit     = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+$swayd            = env RUST_BACKTRACE=1 swayrd > /tmp/swayrd.log 2>&1
+$update_mirrors   = update_mirrors
+$idle_inhibit     = sway-audio-idle-inhibit
+$flashfocus       = flashfocus
+$sun              = ~/.local/bin/sunset.sh 'on'
+$swork_style      = pkill sworkstyle; sworkstyle &> /tmp/sworkstyle.log
+$wl_paste_polling = wl-paste --watch cliphist store # → [cliphist]
+$spice_vdagent    = spice-vdagent # → Used by qemu to share clipboard on X systems.
 
 # Support for non-latin layouts in keybindings. TODO: Migrate to hyprland
 # $bindsym = bindsym --to-code

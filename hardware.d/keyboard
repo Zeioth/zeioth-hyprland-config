@@ -4,9 +4,10 @@
 
 # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
 input {
-    kb_layout = es
-    follow_mouse = 1
-    sensitivity = 0 # -1.0 - 1.0, 0 means no modification.
+    kb_layout          = es
+    follow_mouse       = 1
+    sensitivity        = 0 # -1.0 - 1.0, 0 means no modification.
+    numlock_by_default = 1
     touchpad {
         natural_scroll = no
     }
@@ -17,6 +18,11 @@ input {
 # device:epic mouse V1 {
 #     sensitivity = -0.5
 # }
+device:foostan Corne Mouse {
+    sensitivity = 1 # Maximum value
+    accel_profile = # Empty for device's default accel profile
+}
+
 
 # LEGACY FROM SWAY
 #input * {
