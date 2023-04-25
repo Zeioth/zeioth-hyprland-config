@@ -1,6 +1,9 @@
-# input "*" equals all input methods
-# to specify settings for a specific input method, use its identifier instead.
-# query the connected input methods: `swaymsg -t get_inputs`
+#    Follow mouse values
+#    0 - Cursor movement will not change focus.
+#    1 - Cursor movement will always change focus to the window under the cursor.
+#    2 - Cursor focus will be detached from keyboard focus. Clicking on a window will move keyboard focus to that window.
+#    3 - Cursor focus will be completely separate from keyboard focus. Clicking on a window will not change keyboard focus.
+
 
 # For all categories, see https://wiki.hyprland.org/Configuring/Variables/
 input {

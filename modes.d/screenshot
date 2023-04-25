@@ -1,36 +1,24 @@
-set $mode_screenshot "\
-<span foreground='$modes_secondary_color'></span>  \
-<span foreground='$modes_primary_color'> \
-<span foreground='$modes_secondary_color'>(<b>s</b>)</span>screen-up \
-<span foreground='$modes_secondary_color'>(<b>r</b>)</span>region-up \
-<span foreground='$modes_secondary_color'>(<b>w</b>)</span>window-up \
-<span foreground='$modes_secondary_color'>(<b>a</b>)</span>screen \
-<span foreground='$modes_secondary_color'>(<b>b</b>)</span>region \
-<span foreground='$modes_secondary_color'>(<b>c</b>)</span>window \
-</span>"
-mode --pango_markup $mode_screenshot {
+# TODO: There is no waybar integration in hyprland, so we could
+#       display an overlay with the instructions while the mode is active.
 
-    # Screen (upload)
-    $bindsym s mode "default", exec swayshot display upload
+submap=mode_screenshot
 
-    # Region (upload)
-    $bindsym r mode "default", exec swayshot region upload
+# MODE IMPLEMENTATION
+# -------------------------------------
 
-    # Window (upload)
-    $bindsym w mode "default", exec swayshot window upload
+#BIND      MOD    KEY       DISPATCHER       VALUE
+binde =    ,      s,        exec,      swayshot display upload
+binde =    ,      r,        exec,      swayshot region upload
+binde =    ,      w,        exec,      swayshot window upload
+binde =    ,      a,        exec,      swayshot
+binde =    ,      b,        exec,      swayshot region
+binde =    ,      c,        exec,      swayshot window 
 
 
-    # Screen (local)
-    $bindsym a mode "default", exec swayshot
+# Exit condition
+#BIND      MOD    KEY       DISPATCHER       VALUE
+bind =     ,      escape,   submap,          reset 
 
-    # Region (local)
-    $bindsym b mode "default", exec swayshot region
+# -------------------------------------
 
-    # Window (local)
-    $bindsym c mode "default", exec swayshot window
-
-
-    # Return to default mode.
-    $bindsym Escape mode "default"
-}
-
+submap=reset

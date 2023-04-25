@@ -1,85 +1,136 @@
-# Example windowrule v1
-# windowrule = float, ^(kitty)$
-# Example windowrule v2
-# windowrulev2 = float,class:^(kitty)$,title:^(kitty)$
-# See https://wiki.hyprland.org/Configuring/Window-Rules/ for more
+# More about bindings:
+# https://wiki.hyprland.org/Configuring/Binds/
 
-# See https://wiki.hyprland.org/Configuring/Keywords/ for more
+# Definitions files: 
+# ../aliases.d/01-system-aliases
+# ../aliases.d/02-program-aliases
 
 
 # SYSTEM
 # ============================================================================
-# Definitions files: 
-# ../aliases.d/00-system-aliases
-# ../aliases.d/01-program-aliases
 
-## Float // drag modifier ## TODO: Migrate to hyprland
-# floating_modifier $alt normal
+# - Drag modifier
+# BIND     MOD            KEY       DISPATCHER
+bindm =    ALT_L,      mouse:272,   movewindow
+bindm =    ALT_L,      mouse:273,   resizewindow
 
-## Launch // Terminal ##
-bind = $mod,       t,   exec, $term_scratch
-bind = $mod SHIFT, t,   exec, foot-tmux
+# - System
+# BIND     MOD            KEY       DISPATCHER      VALUE
+bind =     $mod SHIFT,    q,        killactive      # window
+bind =     $mod SHIFT,    c,        exec,           forcerendererreload 
 
-## Launch // Launcher // wofi  ##
-bind = $mod,       d,   exec, $launcher
+# - Terminal
+# BIND     MOD            KEY       DISPATCHER      VALUE
+bind =     $mod,          t,        exec,           $term_scratch
+bind =     $mod SHIFT,    t,        exec,           foot-tmux
+bind =     $mod,          d,        exec,           $launcher
 
-## Action // Kill focused window ##
-bind = $mod SHIFT, q,   killactive
-
-## Action // Reload hyprland Configuration ##
-bind = $mod SHIFT, c, exec, reload, forcerendererreload 
-## System keys
-binde =, XF86AudioRaiseVolume,   exec, pactl set-sink-volume @DEFAULT_SINK@ +5% && $sink_volume > $wob_socket
-binde =, XF86AudioLowerVolume,   exec, pactl set-sink-volume @DEFAULT_SINK@ -5% && $sink_volume > $wob_socket
-bind =, XF86AudioMute,          exec, pactl set-sink-mute @DEFAULT_SINK@ toggle       && $sink_volume_mute > $wob_socket
-# bind = XF86AudioMicMute,       exec, pactl set-source-mute @DEFAULT_SOURCE@ toggle && $set_sink_microphone_mute > $wob_socket
-# bind = XF86MonBrightnessUp,    exec, light -A 5 && $onscreen_bar $(light -G | cut -d'.' -f1)
-# bind = XF86MonBrightnessDown,  exec, light -U 5 && $onscreen_bar $(light -G | cut -d'.' -f1)
-# bind = XF86AudioPlay,          exec, playerctl play-pause
-# bind = XF86AudioNext,          exec, playerctl next
-# bind = XF86AudioPrev,          exec, playerctl previous
-# bind = XF86Search,             exec, $menu
-# bind = XF86PowerOff,             exec, $shutdown
-## bind = XF86TouchpadToggle,   input, type:touchpad events toggle enabled disabled #  LEGACY from sway, fix it if you ever need it.
-
-
-# FOCUS
-# ============================================================================
-
-# Move your focus around (LEGACY from sway, fix it if you need)
-## Navigation // Move focus // $mod + ↑ ↓ ← → ##
-# bind = $mod, Left focus left
-# bind = $mod, Down focus down
-# bind = $mod, Up focus up
-# bind = $mod, Right focus right
+# - Hardware control
+# BIND   MOD  KEY                     DISPATCHER   VALUE
+binde =  ,    XF86AudioRaiseVolume,   exec,        pactl set-sink-volume @DEFAULT_SINK@ +5% && $sink_volume > $wob_socket
+binde =  ,    XF86AudioLowerVolume,   exec,        pactl set-sink-volume @DEFAULT_SINK@ -5% && $sink_volume > $wob_socket
+bind  =  ,    XF86AudioMute,          exec,        pactl set-sink-mute @DEFAULT_SINK@ toggle       && $sink_volume_mute > $wob_socket
+bind  =  ,    XF86AudioMicMute,       exec,        pactl set-source-mute @DEFAULT_SOURCE@ toggle && $set_sink_microphone_mute > $wob_socket
+bind  =  ,    XF86MonBrightnessUp,    exec,        light -A 5 && $onscreen_bar $(light -G | cut -d'.' -f1)
+bind  =  ,    XF86MonBrightnessDown,  exec,        light -U 5 && $onscreen_bar $(light -G | cut -d'.' -f1)
+bind  =  ,    XF86AudioPlay,          exec,        playerctl play-pause
+bind  =  ,    XF86AudioNext,          exec,        playerctl next
+bind  =  ,    XF86AudioPrev,          exec,        playerctl previous
+bind  =  ,    XF86Search,             exec,        $menu
+bind  =  ,    XF86PowerOff,           exec,        $shutdown
+# bind=XF86TouchpadToggle,input,type:touchpad events toggle enabled disabled  # TODO: Port from sway
 
 
 # WORKSPACES
 # ============================================================================
 
-## Navigation // Switch workspace // $mod + [number] ##
-## Note: workspaces are asociated ot monitors on ../hardware.d/displays
-bind = $mod, 1, workspace, 1
-bind = $mod, 2, workspace, 2
-bind = $mod, 3, workspace, 3
-bind = $mod, 4, workspace, 4
-bind = $mod, 5, workspace, 5
-bind = $mod, 6, workspace, 6
-bind = $mod, 7, workspace, 7
-bind = $mod, 8, workspace, 8
+# - Switch to workspace
+#   Note:  workspaces are asociated ot monitors on ../hardware.d/displays
+# BIND     MOD            KEY       DISPATCHER      VALUE
+bind =     $mod,          1,        workspace,      1
+bind =     $mod,          2,        workspace,      2
+bind =     $mod,          3,        workspace,      3
+bind =     $mod,          4,        workspace,      4
+bind =     $mod,          5,        workspace,      5
+bind =     $mod,          6,        workspace,      6
+bind =     $mod,          7,        workspace,      7
+bind =     $mod,          8,        workspace,      8
 
-## Action // Move focussed window to workspace // $mod + Shift + [number] ##
-bind = $mod SHIFT, 1, movetoworkspace, 1
-bind = $mod SHIFT, 2, movetoworkspace, 2
-bind = $mod SHIFT, 3, movetoworkspace, 3
-bind = $mod SHIFT, 4, movetoworkspace, 4
-bind = $mod SHIFT, 5, movetoworkspace, 5
-bind = $mod SHIFT, 6, movetoworkspace, 6
-bind = $mod SHIFT, 7, movetoworkspace, 7
-bind = $mod SHIFT, 8, movetoworkspace, 8
+# - Move focussed window to workspace 
+# BIND    MOD            KEY       DISPATCHER      VALUE
+bind =    $mod SHIFT,    1,        movetoworkspace, 1
+bind =    $mod SHIFT,    2,        movetoworkspace, 2
+bind =    $mod SHIFT,    3,        movetoworkspace, 3
+bind =    $mod SHIFT,    4,        movetoworkspace, 4
+bind =    $mod SHIFT,    5,        movetoworkspace, 5
+bind =    $mod SHIFT,    6,        movetoworkspace, 6
+bind =    $mod SHIFT,    7,        movetoworkspace, 7
+bind =    $mod SHIFT,    8,        movetoworkspace, 8
+
+
+# UTILITIES
+# ============================================================================
+# - Misc
+# BIND    MOD            KEY       DISPATCHER      VALUE
+bind =    ALT,           return,   exec,           ~/.config/tmux/new-grid.sh
+bind =    $mod SHIFT,    h,        exec,           $help_keyboard
+bind =    $mod SHIFT,    v,        exec,           $help_vim
+bind =    $mod CTRL,     w,        exec,           $weather
+bind =    $mod,          F1,       exec,           $tui_file_browser #  ranger
+bind =    $mod,          F2,       exec,           $gui_file_browser #  pcmanfm
+bind =    $mod,          F6,       exec,           $vim_editor
+bind =    $mod,          F7,       exec,           $vim_backlog
+bind =    $mod,          F8,       exec,           $calc
+bind =    $mod,          F10,      exec,           $vim
+bind =    $mod,          F11,      exec,           $backup_to_cloud
+bind =    $mod,          F4,       exec,           $clipboard_open
+bind =    $mod CTRL,     e,        exec,           wofi-emoji
+bind =    $mod CTRL,     b,        exec,           $update_packages
+bind =    $mod CTRL,     s,        exec,           $chatgpt
+
+# - Swayr (Show running windows and more)
+# TODO: Comprueba porque no funcionan
+# BIND    MOD            KEY       DISPATCHER      VALUE
+bind =    $mod,          tab,      exec,           $swayr-wintab
+bind =    $mod SHIFT,    x,        exec,           $swayr-xkill
+bind =    $mod,          next,     exec,           $swayr-next
+bind =    $mod,          prior,    exec,           $swayr-prev
+
+
+# MODES
+# ============================================================================
+
+# BIND    MOD            KEY       DISPATCHER       VALUE
+bind =    $mod SHIFT,    d,        submap,          mode_displays
+bind =    $mod SHIFT,    a,        submap,          mode_move
+bind =    $mod      ,    r,        submap,          mode_resize
+bind =    $mod SHIFT,    s,        submap,          mode_screenshot
+bind =    $mod SHIFT,    e,        submap,          mode_shutdown
+
+
+# SCRATCHPAD
+# ============================================================================
+# Important: In order for hyprland scratchpad to work properly, you must create
+#            a rule where anything going into scratchpat, becomes NOT float.
+
+# BIND    MOD            KEY       DISPATCHER                VALUE
+bind =    $mod SHIFT,    minus,    movetoworkspace,          special
+bind =    $mod,          minus,    togglespecialworkspace
+
+
 
 # LAYOUT
 # ============================================================================
+
+# ## Action // Toggle floating ##
+bind = $mod SHIFT, space, togglefloating
+bind = $mod SHIFT, space, centerwindow
+
+# ## Action // Toggle fullscreen ##
+bind = $mod, f, fullscreen
+
+# ## Action // Toggle fullscreen across all monitors##
+# bind = $mod SHIFT, f, fullscreen global
 
 # ## Setting // Split windows horizontally ##
 # bind = $mod, b, splith
@@ -96,15 +147,6 @@ bind = $mod SHIFT, 8, movetoworkspace, 8
 # ## Action // Toggle window splitting ##
 # bind = $mod, e, layout toggle split
 
-# ## Action // Toggle fullscreen ##
-bind = $mod, f, fullscreen
-
-# ## Action // Toggle fullscreen across all monitors##
-# bind = $mod SHIFT, f, fullscreen global
-
-# ## Action // Toggle floating ##
-bind = $mod SHIFT, space, togglefloating
-
 # ## Navigation // Toggle focus between tiling and floating ##
 # bind = $mod, space, focus mode_toggle
 
@@ -115,56 +157,19 @@ bind = $mod SHIFT, space, togglefloating
 # bind = $mod SHIFT, l, exec, $locking
 
 
-# UTILITIES
+# FOCUS
 # ============================================================================
-# Misc
-bind = ALT,          return,    exec, ~/.config/tmux/new-grid.sh
-bind = $mod SHIFT,   h, exec,   $help_keyboard
-bind = $mod SHIFT,   v, exec,   $help_vim
-bind = $mod CTRL,    w, exec,   $weather
 
-# Function KEYS
-bind = $mod,         F1,  exec, $tui_file_browser #  ranger
-bind = $mod,         F2,  exec, $gui_file_browser #  pcmanfm
-bind = $mod,         F6,  exec, $vim_editor
-bind = $mod,         F7,  exec, $vim_backlog
-bind = $mod,         F8,  exec, $calc
-bind = $mod,         F10, exec, $vim #  We had vim here
-bind = $mod CTRL,    b,   exec, $update_packages
-bind = $mod,         F11, exec, $backup_to_cloud
-#bindsym $mod+F9 exec i3-layout-manager
+# TODO: Migrate from sway
+## Navigation // Move focus // $mod + ↑ ↓ ← → ##
+# bind = $mod, Left focus left
+# bind = $mod, Down focus down
+# bind = $mod, Up focus up
+# bind = $mod, Right focus right
 
-# Wofi
-bind = $mod CTRL,    e,   exec, wofi-emoji
 
-# Swayr (Show running windows and more)
-# bind = $mod,         tab,   exec, $swayr-wintab
-# bind = $mod SHIFT,   x,     exec, $swayr-xkill
-# bind = $mod,         next,  exec  $swayr-next
-# bind = $mod,         prior, exec  $swayr-prev
+# PROGRAM KEYBINDINGS
+# ============================================================================
+# TODO: obs shortcuts, see hyprland docs.
 
-# # SCRATCHPAD
-# # ============================================================================
-# # Sway has a "scratchpad", which is a bag of holding for windows.
-# # You can send windows there and get them back later.
 
-# ## Action // Move window to scratchpad ##
-# bind = $mod SHIFT, minus, move scratchpad, exec "pkill -RTMIN+7 waybar"
-
-# # If there are multiple scratchpad windows, this command cycles through them.
-# ## Action // Toggle scratchpad ##
-# bind = $mod,       minus, scratchpad show, exec "pkill -RTMIN+7 waybar"
-
-# # MODES
-# # ============================================================================
-# bind = $mod SHIFT,  a,     mode $mode_move
-# bind = $mod,        r,     mode $mode_resize
-# bind = $mod SHIFT,  e,     mode $mode_shutdown
-# bind = $mod SHIFT,  s,     mode $mode_screenshot
-# bind = $mod SHIFT,  d,     mode $mode_displays
-
-## Launch // Recording Mode ##
-#bind = $mod+Shift+r mode $mode_recording
-
-## Launch // Stop Recording Mode ##
-#bind = $mod+Escape exec killall -s SIGINT wf-recorder

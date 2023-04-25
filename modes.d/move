@@ -1,23 +1,39 @@
-set $mode_move "<span foreground='$modes_secondary_color'></span>  \
-<span foreground='$modes_primary_color'><b>Move</b></span> <span foreground='$modes_secondary_color'>(<b>h/j/k/l</b>)</span> \
-<span foreground='$modes_primary_color'><b>Exit mode</b></span> <span foreground='$modes_secondary_color'>(<b>ESC</b>)</span>"
+# TODO: There is no waybar integration in hyprland, so we could
+#       display an overlay with the instructions while the mode is active.
 
+submap=mode_move
 
-bindsym $mod+Shift+a mode "move"
-mode --pango_markup $mode_move {
-        # These bindings trigger as soon as you enter the 'move' mode
-        bindsym y move left 
-        bindsym n move down 
-        bindsym e move up 
-        bindsym o move right
-        
-        # same bindings, but for the arrow keys
-        bindsym Left move left 75 px
-        bindsym Down move down 75 px 
-        bindsym Up move up 75 px
-        bindsym Right move right 75 px
+# MODE IMPLEMENTATION
+# -------------------------------------
 
-        # exit resize mode: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
+#BIND      MOD      KEY       DISPATCHER       VALUE
+binde =    SHIFT,   right,    moveactive,      60 0
+binde =    SHIFT,   left,     moveactive,      -60 0
+binde =    SHIFT,   up,       moveactive,      0 -60
+binde =    SHIFT,   down,     moveactive,      0 60
+
+#BIND      MOD      KEY       DISPATCHER       VALUE
+binde =    ,        right,    movewindow,      r
+binde =    ,        left,     movewindow,      l
+binde =    ,        up,       movewindow,      u
+binde =    ,        down,     movewindow,      d
+
+#BIND      MOD      KEY       DISPATCHER       VALUE
+binde =    SHIFT,   i,        moveactive,      60 0
+binde =    SHIFT,   m,        moveactive,      -60 0
+binde =    SHIFT,   e,        moveactive,      0 -60
+binde =    SHIFT,   n,        moveactive,      0 60
+
+#BIND      MOD      KEY       DISPATCHER       VALUE
+binde =    ,        i,        movewindow,      r
+binde =    ,        m,        movewindow,      l
+binde =    ,        e,        movewindow,      u
+binde =    ,        n,        movewindow,      d
+
+# Exit condition
+#BIND      MOD      KEY       DISPATCHER       VALUE
+bind =     ,        escape,   submap,          reset 
+
+# -------------------------------------
+
+submap=reset

@@ -3,6 +3,7 @@
 # Note:    You only need to change this vars to affect the entire system.
 # Warning: Make sure of using the right values or it will cause silent breakage. 
 
+
 $system_theme              = 'Arc-Dark'
 $system_icons              = 'Numix-Square'
 $system_dpi_scaling_factor = 2.6
@@ -15,7 +16,9 @@ $cursor_theme       = Adwaita
 $titlebar_text_size = 32
 $titlebar_font      = Cantarell
 
-# BACKGROUNDS (requires hyprpaper-git)
+# BACKGROUNDS
+# See ../hyprpaper.conf
+
 $background1 = ~/images/backgrounds/tokyo-night-manjarosway-3840x2160.png
 $background2 = ~/images/backgrounds/minimal_squares.png
 $background3 = ~/images/backgrounds/tokyo-night-manjarosway-3840x2160.png
@@ -31,14 +34,6 @@ $background6 = ~/images/backgrounds/tokyonight.png
 $modes_primary_color   = #d8dee8
 $modes_secondary_color = #e6cd69
 
-# WINDOWS AND BORDERS (TODO: migrate to hyprland)
-# -------------------------------------------------
-# TokyoNight theme
-# Property Name             Border  BG      Text    Indicator Child-border
-# client.focused              #0a0b16 #2f343f #4477ff #4477ff   #4477ff
-# client.focused_inactive     #2f343f #2f343f #d8dee8 #2f343f   #2f343f
-# client.unfocused            #2f343f #2f343f #d8dee8 #2f343f   #2f343f
-# client.urgent               #2f343f #2f343f #d8dee8 #2f343f   #2f343f
-# client.placeholder          #2f343f #2f343f #d8dee8 #2f343f   #2f343f
-# client.background           #2f343f
+# HiDPI env vars
+$hidpi_envars = QT_QPA_PLATFORM=wayland QT_STYLE_OVERRIDE=kvantum QT_SCALE_FACTOR=$system_dpi_scaling_factor ELM_SCALE=$system_dpi_scaling_factor GDK_SCALE=$system_dpi_scaling_factor SAL_USE_VCLPLUGIN=gtk3
 

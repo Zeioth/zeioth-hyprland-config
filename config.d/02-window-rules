@@ -1,0 +1,50 @@
+# You can discover a class with 'hyprctl clients'
+# Check the syntax on:  https://wiki.hyprland.org/Configuring/Window-Rules/
+
+
+# WINDOW RULES
+# ============================================================================
+
+# Workspace        RULE                WINDOW
+windowrulev2   =   workspace $ws1,     class:^(steamwebhelper)$
+windowrulev2   =   tile,               class:^(steamwebhelper)$
+windowrulev2   =   workspace $ws1,     class:^(com.stremio.stremio)$
+windowrulev2   =   workspace $ws2,     class:^(firefox)$
+windowrulev2   =   workspace $ws4,     class:^(franz)$
+windowrulev2   =   workspace $ws4,     class:^(com.obsproject.Studio)$
+windowrulev2   =   workspace $ws6,     class:^(thunderbird)$
+windowrulev2   =   workspace $ws6,     class:^(spotify)$
+
+# Scratchpad       RULE                WINDOW
+windowrulev2   =   float,              class:^(scratchpad)$
+windowrulev2   =   float,              class:^(pcmanfm)$
+windowrulev2   =   float,              class:^(pcmanfm-qt)$
+windowrulev2   =   float,              class:^(pamac-manager)$
+windowrulev2   =   float,              class:^(thunar)$
+
+# Fullscreen       RULE                WINDOW
+windowrulev2   =   fullscreen,         class:^(swayimg)$
+windowrulev2   =   fullscreen,         class:^(org.gnome.Weather)$
+windowrulev2   =   fullscreen,         title:^(weather)
+
+# Float             RULE               WINDOW
+windowrulev2   =    float,             class:^(pulsemixer)$
+windowrulev2   =    float,             class:^(pavucontrol)$ 
+windowrulev2   =    float,             class:^(calamares)$ 
+windowrulev2   =    float,             title:^(File Transfer*)$
+windowrulev2   =    float,             title:^(Firefox — Sharing Indicator)$
+windowrulev2   =    float,             class:^(firefox)$,title:^(library)
+windowrulev2   =    float,             title:^(Save File)$
+windowrulev2   =    float,             class:^(blueman-manager)$
+windowrulev2   =    float,             class:^(blueman-manager)$ 
+windowrulev2   =    float,             class:^(thunderbird)$,title:^(.*Reminder)
+
+
+# Animations         RULE                WINDOW
+# TODO: Make an animation for apps going to the scratchpad.
+# windowrule     =     animation popin,    class:^(thunar)$   # Broken[
+
+# TODO: Make a MangoHud fade animation
+# layerrule = rule, namespace
+
+

@@ -1,34 +1,23 @@
-set $mode_shutdown "\
-<span foreground='$modes_secondary_color'></span>  \
-<span foreground='$modes_primary_color'> \
-<span foreground='$modes_secondary_color'>(<b>h</b>)</span>hibernate \
-<span foreground='$modes_secondary_color'>(<b>l</b>)</span>lock \
-<span foreground='$modes_secondary_color'>(<b>e</b>)</span>logout \
-<span foreground='$modes_secondary_color'>(<b>r</b>)</span>reboot \
-<span foreground='$modes_secondary_color'>(<b>s</b>)</span>suspend \
-<span foreground='$modes_secondary_color'>(<b>q</b>)</span>shutdown \
-</span>"
+# TODO: There is no waybar integration in hyprland, so we could
+#       display an overlay with the instructions while the mode is active.
 
-mode --pango_markup $mode_shutdown {
-    # lock
-    $bindsym l mode "default", exec $locking
+submap=mode_shutdown
 
-    # logout
-    $bindsym e exec loginctl terminate-user $USER
+# MODE IMPLEMENTATION
+# -------------------------------------
 
-    # suspend
-    $bindsym s mode "default", exec systemctl suspend
+#BIND      MOD     KEY        DISPATCHER       VALUE
+binde =     ,       l,        exec,            $locking
+binde =     ,       e,        exit 
+binde =     ,       s,        exec,            systemctl suspend
+binde =     ,       h,        exec,            systemctl hibernate
+binde =     ,       q,        exec,            systemctl poweroff
+binde =     ,       r,        exec,            systemctl reboot
 
-    # hibernate
-    $bindsym h mode "default", exec systemctl hibernate
+# Exit condition
+#BIND      MOD    KEY       DISPATCHER       VALUE
+bind =      ,       escape,   submap,          reset 
 
-    # shutdown
-    $bindsym q exec systemctl poweroff
+# -------------------------------------
 
-    # reboot
-    $bindsym r exec systemctl reboot
-
-    # Return to default mode.
-    $bindsym Escape mode "default"
-}
-
+submap=reset
