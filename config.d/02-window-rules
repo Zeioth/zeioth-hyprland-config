@@ -43,6 +43,6 @@ windowrulev2   =    float,             class:^(thunderbird)$,title:^(.*Reminder)
 # windowrulev2  =  noanim,            class:^(wofi)$ 
 
 # Layer             RULE               WINDOW
-# layerrule     =   noanim,            wofi
+layerrule       =   noanim,            wofi
 
 

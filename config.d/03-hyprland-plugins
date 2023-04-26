@@ -1,4 +1,9 @@
-# Read: https://wiki.hyprland.org/Plugins/Using-Plugins/#installing--using-plugins
+# Plugins are enabled in: 
+# ../autostart.d/02-hyprland-plugins.conf
+
+# Plugins must be compiled and installed in order to work.
+# See: https://wiki.hyprland.org/Plugins/Using-Plugins/#installing--using-plugins
+
 
 #plugin:hyprfocus {
     #enabled = true

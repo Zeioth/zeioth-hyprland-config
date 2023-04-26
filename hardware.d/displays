@@ -33,6 +33,7 @@ misc {
 }
 
 # See https://wiki.hyprland.org/Configuring/Monitors/
+# BUG: ATM using 10 bits mode will cause grim and OBS to render black.
 monitor = $screen1,3840x2160@60,0x0,1,bitdepth,10
 monitor = $screen2,3840x2160@60,3840x0,1,bitdepth,10
 monitor = $screen3,3840x2160@60,7680x0,1,bitdepth,10

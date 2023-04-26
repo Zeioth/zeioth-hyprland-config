@@ -91,10 +91,12 @@ bind =    $mod CTRL,     s,        exec,           $chatgpt
 # - Swayr (Show running windows and more)
 # TODO: Comprueba porque no funcionan
 # BIND    MOD            KEY       DISPATCHER      VALUE
-bind =    $mod,          tab,      exec,           $swayr-wintab
-bind =    $mod SHIFT,    x,        exec,           $swayr-xkill
-bind =    $mod,          next,     exec,           $swayr-next
-bind =    $mod,          prior,    exec,           $swayr-prev
+bind =    $mod SHIFT,    x,        exec,           $task_manager
+bind =    $mod,          tab,      exec,           $task_manager
+#bind =    $mod,          tab,      exec,           $swayr-wintab
+#bind =    $mod SHIFT,    x,        exec,           $swayr-xkill
+#bind =    $mod,          next,     exec,           $swayr-next
+#bind =    $mod,          prior,    exec,           $swayr-prev
 
 
 # MODES
@@ -170,6 +172,14 @@ bind = $mod, f, fullscreen
 
 # PROGRAM KEYBINDINGS
 # ============================================================================
-# TODO: obs shortcuts, see hyprland docs.
+# HOW IT WORKS
+# The keybindings must be defined inside the program too.
+# We are just passing the keybinding to the program.
+# WARNING: 
+# While you use this feature, you won't be able to use the shortcuts
+# on anything else, not even in the program itself. So comment this
+# while you setup the keybindings inside the program.
 
-
+# BIND    MOD            KEY       DISPATCHER   VALUE
+bind =    CTRL SHIFT,    r,        pass,        ^(com\.obsproject\.Studio)$
+bind =    CTRL SHIFT,    b,        pass,        ^(com\.obsproject\.Studio)$

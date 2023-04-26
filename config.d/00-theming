@@ -1,12 +1,10 @@
- Theme
-# ============================================================================
-# WARNING: DON'T CHANGE THE THEME HERE. 
-#          Instead, use ../aliases.d/00-themeing-aliases
+# Definitions files: 
+# ../aliases.d/00-themeing-aliases
 
 
 # GTK THEME
-# ----------------------------------------------
-# This is the only place where rou must set GTK scaling
+# ================================================
+# This is the only place where you need to set GTK scaling
 $gnome-schema = org.gnome.desktop.interface
 exec {
   gsettings set $gnome-schema gtk-theme $system_theme
@@ -18,12 +16,12 @@ exec {
 
 
 # MOUSE THEME AND SIZE
-# ----------------------------------------------
+# ================================================
 exec-once=hyprctl setcursor $cursor_theme $cursor_size
 
 
 # WINDOWS AND BORDERS
-# ----------------------------------------------
+# ================================================
 general { 
   layout = dwindle
 
@@ -43,7 +41,7 @@ general {
 
 
 # VISUAL EFFECTS
-# ----------------------------------------------
+# ================================================
 
 # See: https://wiki.hyprland.org/Configuring/Variables
 decoration {
@@ -73,28 +71,28 @@ animations {
     # BEZIERS    NAME        X0    Y0   X1   Y1
     bezier    =  myBezier,   0.05, 0.9, 0.1, 1.05
     
-
     # ANIMATION  NAME        ON    SPEED  CURVE      # STYLE
     animation =  windows,    1,    2,     myBezier
     animation =  windowsOut, 1,    2,     default,   popin 80%
     animation =  border,     1,    1,     default
-    animation =  fade,       1,    2,     default
+    animation =  fadeIn,     1,    2,     default
+    animation =  fadeOut,    1,    2,     default
     animation =  workspaces, 1,    2,     default
 }
 
 
 # LAYOUT DETAILS
-# ----------------------------------------------
+# ================================================
 
-# See https://wiki.hyprland.org/Configuring/Dwindle-Layout/ for more
+# See: https://wiki.hyprland.org/Configuring/Dwindle-Layout/
 dwindle {
-    pseudotile     = yes # master switch for pseudotiling. Enabling is bound to mainMod + P in the keybinds section below
-    preserve_split = yes # you probably want this
+    pseudotile     = yes
+    preserve_split = yes
 }
 
-# See https://wiki.hyprland.org/Configuring/Master-Layout/ for more
+# See: https://wiki.hyprland.org/Configuring/Master-Layout
 master { new_is_master = true }
 
-# See https://wiki.hyprland.org/Configuring/Variables/ for more
+# See: https://wiki.hyprland.org/Configuring/Variables
 gestures { workspace_swipe = off }
 

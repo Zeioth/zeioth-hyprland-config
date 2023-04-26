@@ -22,6 +22,9 @@ $screen6 = DP-5
 # Launcher
 $launcher = $hidpi_envars wofi -p run
 
+# Task manager
+$task_manager = pkill -9 fkill; $term_scratch -T "Task Killer - fkill" fkill -f 
+
 # Notification daemon configuration
 $notifications = mako
 
