@@ -1,10 +1,11 @@
  Theme
 # ============================================================================
 # WARNING: DON'T CHANGE THE THEME HERE. 
-#          Instead, use ../definitions.d/02-theming
+#          Instead, use ../aliases.d/00-themeing-aliases
 
 
-# GTK
+# GTK THEME
+# ----------------------------------------------
 # This is the only place where rou must set GTK scaling
 $gnome-schema = org.gnome.desktop.interface
 exec {
@@ -15,7 +16,9 @@ exec {
   gsettings set org.gnome.desktop.interface cursor-size $cursor_size
 }
 
-# Mouse
+
+# MOUSE THEME AND SIZE
+# ----------------------------------------------
 exec-once=hyprctl setcursor $cursor_theme $cursor_size
 
 
