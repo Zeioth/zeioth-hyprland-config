@@ -1,10 +1,9 @@
-# WARNING: I found 'modes' as in I3/sway don't exist or haven't been implemented yet. Meaning hyprland cannot be used in a modal way like vim. This is a big deal for me so I'm moving away until it's done. If you want to use the dotfiles, they work fine though (except for the parts that would require modes, like the shutdown menu and stuff).
-
 # zeioth dotfiles config for hyprland
 Clone the directory into `~/.config` and use it as base for your config. Or just for reference.
 
 ## FEATURES
 
+ * Complex setup where most likely you will find the solution to most common issues you encounter while setting up hyprland.
  * pre-binded modes to manage `screenshots` (local and/or to the cloud),
   `displays`, `move`, `resize`, `shutdown`.
  * variables isolated from the rest of the config.
@@ -22,10 +21,7 @@ Read 'hypr.config'. From there is quite easy to understand everything.
 
 ## COOL TO TWEAK (BUT NOT NECESSARY)
 
-You can go into `./modes.d/displays` and modify the file to work as you desire. You will find examples about how to:
-
-  * Change resolutions on the fly
-  * Change the number of enabled monitors (very likely you just want to enable one while playing)
+You can go into `./modes.d/displays` and modify the file to work as you desire. You will find examples about how to change the number of enabled monitors (very likely you just want to enable one while gaming)
 
 # FAQ
 
