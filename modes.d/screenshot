@@ -7,13 +7,12 @@ submap=mode_screenshot
 # -------------------------------------
 
 #BIND      MOD    KEY       DISPATCHER       VALUE
-binde =    ,      s,        exec,      swayshot display upload
-binde =    ,      r,        exec,      swayshot region upload
-binde =    ,      w,        exec,      swayshot window upload
-binde =    ,      a,        exec,      swayshot
-binde =    ,      b,        exec,      swayshot region
-binde =    ,      c,        exec,      swayshot window 
-
+bind =    ,      s,        exec,      swayshot display upload
+bind =    ,      r,        exec,      swayshot region upload
+bind =    ,      w,        exec,      swayshot window upload
+bind =    ,      a,        exec,      swayshot
+bind =    ,      b,        exec,      swayshot region
+bind =    ,      c,        exec,      swayshot window 
 
 # Exit condition
 #BIND      MOD    KEY       DISPATCHER       VALUE

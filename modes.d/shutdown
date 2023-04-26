@@ -7,12 +7,12 @@ submap=mode_shutdown
 # -------------------------------------
 
 #BIND      MOD     KEY        DISPATCHER       VALUE
-binde =     ,       l,        exec,            $locking
-binde =     ,       e,        exit 
-binde =     ,       s,        exec,            systemctl suspend
-binde =     ,       h,        exec,            systemctl hibernate
-binde =     ,       q,        exec,            systemctl poweroff
-binde =     ,       r,        exec,            systemctl reboot
+bind =     ,       l,        exec,            $locking
+bind =     ,       e,        exit 
+bind =     ,       s,        exec,            systemctl suspend
+bind =     ,       h,        exec,            systemctl hibernate
+bind =     ,       q,        exec,            systemctl poweroff
+bind =     ,       r,        exec,            systemctl reboot
 
 # Exit condition
 #BIND      MOD    KEY       DISPATCHER       VALUE

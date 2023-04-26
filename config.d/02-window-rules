@@ -39,12 +39,10 @@ windowrulev2   =    float,             class:^(blueman-manager)$
 windowrulev2   =    float,             class:^(blueman-manager)$ 
 windowrulev2   =    float,             class:^(thunderbird)$,title:^(.*Reminder)
 
+# Animation        RULE               WINDOW
+# windowrulev2  =  noanim,            class:^(wofi)$ 
 
-# Animations         RULE                WINDOW
-# TODO: Make an animation for apps going to the scratchpad.
-# windowrule     =     animation popin,    class:^(thunar)$   # Broken[
-
-# TODO: Make a MangoHud fade animation
-# layerrule = rule, namespace
+# Layer             RULE               WINDOW
+# layerrule     =   noanim,            wofi
 
 
