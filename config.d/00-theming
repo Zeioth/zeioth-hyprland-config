@@ -39,6 +39,13 @@ general {
   col.inactive_border = 0xff2f343f
 }
 
+misc {
+  # Allow windows to steal focus - (only xorg apps currently)
+  focus_on_activate = false
+
+  # Enable if you use personalized wallpapers
+  disable_hyprland_logo = true
+}
 
 # VISUAL EFFECTS
 # ================================================

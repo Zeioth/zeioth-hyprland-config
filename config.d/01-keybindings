@@ -117,8 +117,7 @@ bind =    $mod SHIFT,    e,        submap,          mode_shutdown
 
 # BIND    MOD            KEY       DISPATCHER                VALUE
 bind =    $mod SHIFT,    minus,    movetoworkspace,          special
-bind =    $mod,          minus,    togglespecialworkspace
-
+bind =    $mod,          minus,    togglespecialworkspace 
 
 
 # LAYOUT
@@ -132,6 +131,7 @@ bind = $mod SHIFT, space, centerwindow
 bind = $mod, f, fullscreen
 
 # ## Action // Toggle fullscreen across all monitors##
+# WIP: https://github.com/hyprwm/Hyprland/issues/1660
 # bind = $mod SHIFT, f, fullscreen global
 
 # ## Setting // Split windows horizontally ##
@@ -156,7 +156,7 @@ bind = $mod, f, fullscreen
 # bind = $mod, a, focus parent
 
 # ## Quick lock
-# bind = $mod SHIFT, l, exec, $locking
+bind = $mod SHIFT, l, exec, $locking
 
 
 # FOCUS
