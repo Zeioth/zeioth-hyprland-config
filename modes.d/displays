@@ -44,9 +44,13 @@ bind =    ,      s,        dpms,            on $screen4
 bind =    ,      s,        dpms,            on $screen5
 bind =    ,      s,        dpms,            on $screen6
 
-# Exit condition
+# Exit conditions
 #BIND     MOD    KEY       DISPATCHER       VALUE
 bind =    ,      escape,   submap,          reset 
+bind =    ,      o,        submap,          reset 
+bind =    ,      t,        submap,          reset 
+bind =    ,      f,        submap,          reset 
+bind =    ,      s,        submap,          reset 
 
 # -------------------------------------
 

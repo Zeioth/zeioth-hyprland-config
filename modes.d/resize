@@ -6,11 +6,11 @@ submap=mode_resize
 # MODE IMPLEMENTATION
 # -------------------------------------
 
-#BIND     MOD      KEY       DISPATCHER       VALUE
-binde =    ,       right,    resizeactive,    60 0
-binde =    ,       left,     resizeactive,    -60 0
-binde =    ,       up,       resizeactive,    0 -60
-binde =    ,       down,     resizeactive,    0 60
+#BIND     MOD      KEY        DISPATCHER       VALUE
+binde =    ,       right,     resizeactive,    60 0
+binde =    ,       left,      resizeactive,    -60 0
+binde =    ,       up,        resizeactive,    0 -60
+binde =    ,       down,      resizeactive,    0 60
 
 #BIND     MOD       KEY       DISPATCHER       VALUE
 binde =   SHIFT,    right,    resizeactive,    120 0
@@ -30,7 +30,7 @@ binde =   SHIFT,    m,        resizeactive,    -120 0
 binde =   SHIFT,    e,        resizeactive,    0 -120
 binde =   SHIFT,    n,        resizeactive,    0 120
 
-# Exit condition
+# Exit conditions
 #BIND     MOD       KEY       DISPATCHER       VALUE
 bind =      ,       escape,   submap,          reset 
 

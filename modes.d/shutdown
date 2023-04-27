@@ -14,9 +14,15 @@ bind =     ,       h,        exec,            systemctl hibernate
 bind =     ,       q,        exec,            systemctl poweroff
 bind =     ,       r,        exec,            systemctl reboot
 
-# Exit condition
+# Exit conditions
 #BIND      MOD    KEY       DISPATCHER       VALUE
-bind =      ,       escape,   submap,          reset 
+bind =      ,     escape,   submap,          reset 
+bind =      ,     l,        submap,          reset 
+bind =      ,     e,        submap,          reset 
+bind =      ,     s,        submap,          reset 
+bind =      ,     h,        submap,          reset 
+bind =      ,     q,        submap,          reset 
+bind =      ,     r,        submap,          reset 
 
 # -------------------------------------
 

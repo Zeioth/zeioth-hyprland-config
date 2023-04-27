@@ -30,7 +30,7 @@ binde =    ,        m,        movewindow,      l
 binde =    ,        e,        movewindow,      u
 binde =    ,        n,        movewindow,      d
 
-# Exit condition
+# Exit conditions
 #BIND      MOD      KEY       DISPATCHER       VALUE
 bind =     ,        escape,   submap,          reset 
 

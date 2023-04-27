@@ -16,9 +16,17 @@ bind =     ,      b,        exec,            hyprshotgun region
 bind =     ,      c,        exec,            hyprshotgun window 
 bind =     ,      e,        exec,            hyprshotgun alldisplays
 
-# Exit condition
+# Exit conditions
 #BIND      MOD    KEY       DISPATCHER       VALUE
 bind =     ,      escape,   submap,          reset 
+bind =     ,      s,        submap,          reset 
+bind =     ,      r,        submap,          reset 
+bind =     ,      w,        submap,          reset 
+bind =     ,      d,        submap,          reset 
+bind =     ,      a,        submap,          reset 
+bind =     ,      b,        submap,          reset 
+bind =     ,      c,        submap,          reset 
+bind =     ,      e,        submap,          reset 
 
 # -------------------------------------
 
