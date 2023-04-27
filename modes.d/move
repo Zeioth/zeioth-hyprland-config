@@ -1,36 +1,38 @@
 # TODO: There is no waybar integration in hyprland, so we could
 #       display an overlay with the instructions while the mode is active.
 
+# DESCRIPTION: You can move a tiled window with the arrow keys.
+#              You can move a float window with SHIFT + arrow keys.
+
+
 submap=mode_move
 
 # MODE IMPLEMENTATION
 # -------------------------------------
 
-#BIND      MOD      KEY       DISPATCHER       VALUE
-binde =    SHIFT,   right,    moveactive,      60 0
-binde =    SHIFT,   left,     moveactive,      -60 0
-binde =    SHIFT,   up,       moveactive,      0 -60
-binde =    SHIFT,   down,     moveactive,      0 60
-
+# For tiled
 #BIND      MOD      KEY       DISPATCHER       VALUE
 binde =    ,        right,    movewindow,      r
 binde =    ,        left,     movewindow,      l
 binde =    ,        up,       movewindow,      u
 binde =    ,        down,     movewindow,      d
-
-#BIND      MOD      KEY       DISPATCHER       VALUE
-binde =    SHIFT,   i,        moveactive,      60 0
-binde =    SHIFT,   m,        moveactive,      -60 0
-binde =    SHIFT,   e,        moveactive,      0 -60
-binde =    SHIFT,   n,        moveactive,      0 60
-
-#BIND      MOD      KEY       DISPATCHER       VALUE
 binde =    ,        i,        movewindow,      r
 binde =    ,        m,        movewindow,      l
 binde =    ,        e,        movewindow,      u
 binde =    ,        n,        movewindow,      d
 
-# Exit conditions
+# For floats
+#BIND      MOD      KEY       DISPATCHER       VALUE
+binde =    SHIFT,   right,    moveactive,      60 0
+binde =    SHIFT,   left,     moveactive,      -60 0
+binde =    SHIFT,   up,       moveactive,      0 -60
+binde =    SHIFT,   down,     moveactive,      0 60
+binde =    SHIFT,   i,        moveactive,      60 0
+binde =    SHIFT,   m,        moveactive,      -60 0
+binde =    SHIFT,   e,        moveactive,      0 -60
+binde =    SHIFT,   n,        moveactive,      0 60
+
+# Exit condition
 #BIND      MOD      KEY       DISPATCHER       VALUE
 bind =     ,        escape,   submap,          reset 
 
