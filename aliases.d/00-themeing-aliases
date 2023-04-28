@@ -3,7 +3,6 @@
 # Note:    You only need to change this vars to affect the entire system.
 # Warning: Make sure of using the right values or it will cause silent breakage. 
 
-
 $system_theme              = 'Arc-Dark'
 $system_icons              = 'Numix-Square'
 $system_dpi_scaling_factor = 2.6
@@ -33,7 +32,3 @@ $background6 = ~/images/backgrounds/tokyonight.png
 # MODES
 $modes_primary_color   = #d8dee8
 $modes_secondary_color = #e6cd69
-
-# HiDPI env vars
-$hidpi_envars = QT_QPA_PLATFORM=wayland QT_STYLE_OVERRIDE=kvantum QT_SCALE_FACTOR=$system_dpi_scaling_factor ELM_SCALE=$system_dpi_scaling_factor GDK_SCALE=$system_dpi_scaling_factor SAL_USE_VCLPLUGIN=gtk3
-

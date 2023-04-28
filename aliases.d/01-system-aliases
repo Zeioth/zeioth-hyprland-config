@@ -1,3 +1,7 @@
+# dbus docs: https://wiki.archlinux.org/title/Systemd/User#Environment_variables 
+# This is necessary for them to apply the themes to hyprland-share-pickr.
+
+
 # SYSTEM VARIABLES
 # ============================================================================
 
@@ -20,7 +24,7 @@ $screen5 = DP-4
 $screen6 = DP-5
 
 # Launcher
-$launcher = $hidpi_envars wofi -p run
+$launcher = wofi -p run
 
 # Task manager
 $task_manager = pkill -9 fkill; $term_scratch -T "Task Killer - fkill" fkill -f 
@@ -54,7 +58,7 @@ $sink_microphone_volume_mute = pactl get-source-mute @DEFAULT_SOURCE@ | sed -En 
 
 # Other system artifacts
 $systemctl_env      = systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
-$dbus_env           = hash dbus-update-activation-environment 2>/dev/null && dbus-update-activation-environment --systemd DISPLAY WAYLAND_DISPLAY SWAYSOCK
+$dbus_env           = dbus-update-activation-environment --systemd --all
 $gnome_polkit       = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 $swayd              = env RUST_BACKTRACE=1 swayrd > /tmp/swayrd.log 2>&1
 $update_mirrors     = update_mirrors

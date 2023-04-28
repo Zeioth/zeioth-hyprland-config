@@ -7,11 +7,11 @@ submap=mode_screenshot
 # -------------------------------------
 
 #BIND      MOD    KEY       DISPATCHER       VALUE
-bind =     ,      s,        exec,            hyprshotgun upload
+bind =     ,      s,        exec,            hyprshotgun display upload
 bind =     ,      r,        exec,            hyprshotgun region upload
 bind =     ,      w,        exec,            hyprshotgun window upload
 bind =     ,      d,        exec,            hyprshotgun alldisplays upload
-bind =     ,      a,        exec,            hyprshotgun
+bind =     ,      a,        exec,            hyprshotgun display
 bind =     ,      b,        exec,            hyprshotgun region
 bind =     ,      c,        exec,            hyprshotgun window 
 bind =     ,      e,        exec,            hyprshotgun alldisplays

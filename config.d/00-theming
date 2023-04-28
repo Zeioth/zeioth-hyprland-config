@@ -2,6 +2,21 @@
 # ../aliases.d/00-themeing-aliases
 
 
+# HYPRLAND ENV VARS
+# ================================================
+# Clarification: 
+# I'm defining them on my .profile instead of here
+# beause I want them to affect all my desktop environments.
+
+# env = QT_QPA_PLATFORM,wayland
+# env = QT_STYLE_OVERRIDE,kvantum
+# env = XCURSOR_SIZE=108
+# env = QT_SCALE_FACTOR,2.6
+# env = ELM_SCALE,2.6
+# env = GDK_SCALE,2.6
+# env = SAL_USE_VCLPLUGIN,gtk3
+
+
 # GTK THEME
 # ================================================
 # This is the only place where you need to set GTK scaling
