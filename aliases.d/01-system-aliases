@@ -57,8 +57,9 @@ $source_volume               = pactl get-source-volume @DEFAULT_SOURCE@ | grep '
 $sink_microphone_volume_mute = pactl get-source-mute @DEFAULT_SOURCE@ | sed -En "/no/ s/.*/$($source_volume)/p; /yes/ s/.*/0/p" 
 
 # Other system artifacts
-$systemctl_env      = systemctl --user import-environment DISPLAY WAYLAND_DISPLAY SWAYSOCK
+$systemctl_env      = systemctl --user import-environment
 $dbus_env           = dbus-update-activation-environment --systemd --all
+$flatpak_env        = flatpak override -u
 $gnome_polkit       = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 $swayd              = env RUST_BACKTRACE=1 swayrd > /tmp/swayrd.log 2>&1
 $update_mirrors     = update_mirrors
