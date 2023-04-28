@@ -5,6 +5,7 @@
 # See: https://wiki.hyprland.org/Plugins/Using-Plugins/#installing--using-plugins
 
 
+# PLUGINS ARE HIGHLY EXPERIMENTAL AND DOESN'T WORK JUST YET.
 #plugin:hyprfocus {
     #enabled = true
     #opacity = 0.7
