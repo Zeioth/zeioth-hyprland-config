@@ -1,4 +1,5 @@
-# dbus docs: https://wiki.archlinux.org/title/Systemd/User#Environment_variables 
+# dbus docs:    https://wiki.archlinux.org/title/Systemd/User#Environment_variables 
+# flatpak docs: https://www.reddit.com/r/flatpak/comments/131qsvf/passing_env_vars_bottles_ignores_flatpak_override/ 
 # This is necessary for them to apply the themes to hyprland-share-pickr.
 
 
@@ -27,7 +28,7 @@ $screen6 = DP-5
 $launcher = wofi -p run
 
 # Task manager
-$task_manager = pkill -9 fkill; $term_scratch -T "Task Killer - fkill" fkill -f 
+$task_manager = pkill -9 fkill; $term_scratch -T "Task Killer - fkill" fzf-kill 
 
 # Notification daemon configuration
 $notifications = mako
@@ -63,7 +64,6 @@ $flatpak_env        = flatpak override -u
 $gnome_polkit       = /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 $swayd              = env RUST_BACKTRACE=1 swayrd > /tmp/swayrd.log 2>&1
 $update_mirrors     = update_mirrors
-$flashfocus         = flashfocus
 $sunset             = ~/.local/bin/sunset.sh on
 $swork_style        = pkill sworkstyle; sworkstyle &> /tmp/sworkstyle.log
 $wl_paste_polling   = wl-paste --watch cliphist store # → [cliphist]
