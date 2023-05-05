@@ -11,7 +11,6 @@ Clone the directory into `~/.config` and use it as base for your config. Or just
 
 ## YOU MUST
 
-* Go to `./aliases.d/01-system-aliases` and replace the display name with yours.
 * Go to `./hardware.d/displays` and setup your displays there.
 
 ## YOU SHOULD
