@@ -69,6 +69,7 @@ $swork_style        = pkill sworkstyle; sworkstyle &> /tmp/sworkstyle.log
 $wl_paste_polling   = wl-paste --watch cliphist store # → [cliphist]
 $spice_vdagent      = spice-vdagent # → Used by qemu to share clipboard on X systems.
 $wallpapers         = hyprpaper
+$clipboard_open     = cliphist list | wofi --show dmenu -p clipboard | cliphist decode | wl-copy; pkill -RTMIN+9 waybar
 
 # workspace name (to display on waybar)
 $ws1 = 1
