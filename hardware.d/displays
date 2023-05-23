@@ -9,15 +9,13 @@
 
 # NOT SUPPORTED YET ON HYPRLAND (Maybe they are not needed at all)
 # FOR ALL SCREENS (Use rbg subpixel, for antialiased, less sharp image)
-# output * adaptive_sync on
-# output * max_render_time 16
 # output * subpixel none
 
 misc {
   vfr = true
   vrr = true
   #no_direct_scanout = false
-  
+
   # Currently buggy
   # render_ahead_of_time = 1
 
@@ -41,12 +39,13 @@ monitor = $screen4,3840x2160@60,0x2160,1,bitdepth,8
 monitor = $screen5,3840x2160@60,3840x2160,1,bitdepth,8
 monitor = $screen6,3840x2160@60,7680x2160,1,bitdepth,8
 
-# Workspaces
-wsbind = 1,$screen4
-wsbind = 2,$screen5
-wsbind = 3,$screen6
-wsbind = 4,$screen1
-wsbind = 5,$screen2
-wsbind = 6,$screen3
+# See: https://wiki.hyprland.org/Configuring/Workspace-Rules/
+# WORKSPACE       MONITOR           IS DEFAULT
+workspace=name:1, monitor:$screen4, default:true
+workspace=name:2, monitor:$screen5, default:true
+workspace=name:3, monitor:$screen6, default:true
+workspace=name:4, monitor:$screen1, default:true
+workspace=name:5, monitor:$screen2, default:true
+workspace=name:6, monitor:$screen3, default:true
 
 
