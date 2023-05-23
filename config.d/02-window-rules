@@ -29,18 +29,21 @@ windowrulev2   =   fullscreen,         title:^(weather)
 
 # Float             RULE               WINDOW
 windowrulev2   =    float,             class:^(pulsemixer)$
-windowrulev2   =    float,             class:^(pavucontrol)$ 
-windowrulev2   =    float,             class:^(calamares)$ 
+windowrulev2   =    float,             class:^(pavucontrol)$
+windowrulev2   =    float,             class:^(calamares)$
 windowrulev2   =    float,             title:^(File Transfer*)$
 windowrulev2   =    float,             title:^(Firefox — Sharing Indicator)$
 windowrulev2   =    float,             class:^(firefox)$,title:^(library)
 windowrulev2   =    float,             title:^(Save File)$
 windowrulev2   =    float,             class:^(blueman-manager)$
-windowrulev2   =    float,             class:^(blueman-manager)$ 
 windowrulev2   =    float,             class:^(thunderbird)$,title:^(.*Reminder)
+windowrulev2   =    float,             class:^(pyton3)$,title:(\Remaining (\)
+windowrulev2   =    float,             class:^(SVPManager)$
+windowrulev2   =    tile,              class:^(file-roller)$,title:^(Archive manager)
+windowrulev2   =    float,             class:^(file-roller)$,title:^(Extract archive)
 
 # Animation        RULE               WINDOW
-# windowrulev2  =  noanim,            class:^(wofi)$ 
+# windowrulev2  =  noanim,            class:^(wofi)$
 # windowrulev2  =  dimaround,         class:^(scratchpad)$
 
 # Layer             RULE               WINDOW
