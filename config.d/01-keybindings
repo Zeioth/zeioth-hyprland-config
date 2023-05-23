@@ -1,7 +1,7 @@
 # More about bindings:
 # https://wiki.hyprland.org/Configuring/Binds/
 
-# Definitions files: 
+# Definitions files:
 # ../aliases.d/01-system-aliases
 # ../aliases.d/02-program-aliases
 
@@ -17,7 +17,7 @@ bindm =    ALT_L,      mouse:273,   resizewindow
 # - System
 # BIND     MOD            KEY       DISPATCHER      VALUE
 bind =     $mod SHIFT,    q,        killactive      # window
-bind =     $mod SHIFT,    c,        exec,           forcerendererreload 
+bind =     $mod SHIFT,    c,        exec,           forcerendererreload
 
 # - Terminal
 # BIND     MOD            KEY       DISPATCHER      VALUE
@@ -56,7 +56,7 @@ bind =     $mod,          6,        workspace,      6
 bind =     $mod,          7,        workspace,      7
 bind =     $mod,          8,        workspace,      8
 
-# - Move focussed window to workspace 
+# - Move focussed window to workspace
 # BIND    MOD            KEY       DISPATCHER      VALUE
 bind =    $mod SHIFT,    1,        movetoworkspace, 1
 bind =    $mod SHIFT,    2,        movetoworkspace, 2
@@ -74,14 +74,14 @@ bind =    $mod SHIFT,    8,        movetoworkspace, 8
 # BIND    MOD            KEY       DISPATCHER      VALUE
 bind =    ALT,           return,   exec,           ~/.config/tmux/new-grid.sh
 bind =    $mod SHIFT,    h,        exec,           $help_keyboard
-bind =    $mod SHIFT,    v,        exec,           $help_vim
+bind =    $mod SHIFT,    v,        exec,           $help_nvim
 bind =    $mod CTRL,     w,        exec,           $weather
 bind =    $mod,          F1,       exec,           $tui_file_browser #  ranger
 bind =    $mod,          F2,       exec,           $gui_file_browser #  pcmanfm
-bind =    $mod,          F6,       exec,           $vim_editor
-bind =    $mod,          F7,       exec,           $vim_backlog
+bind =    $mod,          F6,       exec,           $nvim_editor
+bind =    $mod,          F7,       exec,           $nvim_backlog
 bind =    $mod,          F8,       exec,           $calc
-bind =    $mod,          F10,      exec,           $vim
+bind =    $mod,          F10,      exec,           $nvim
 bind =    $mod,          F11,      exec,           $backup_to_cloud
 bind =    $mod,          F4,       exec,           $clipboard_open
 bind =    $mod CTRL,     e,        exec,           wofi-emoji
@@ -116,9 +116,9 @@ bind =    $mod SHIFT,    e,        submap,          mode_shutdown
 #            a rule where anything going into scratchpat, becomes NOT float.
 
 # BIND    MOD            KEY       DISPATCHER                VALUE
-bind =    $mod SHIFT,    minus,    movetoworkspace,          special
-bind =    $mod,          minus,    togglespecialworkspace 
-
+bind =    $mod SHIFT,    minus,    exec,                     hypr-fix-special
+bind =    $mod,          minus,    togglespecialworkspace
+# bind =    $mod SHIFT,    minus,    movetoworkspace,          special
 
 # LAYOUT
 # ============================================================================
@@ -175,7 +175,7 @@ bind = $mod SHIFT, l, exec, $locking
 # HOW IT WORKS
 # The keybindings must be defined inside the program too.
 # We are just passing the keybinding to the program.
-# WARNING: 
+# WARNING:
 # While you use this feature, you won't be able to use the shortcuts
 # on anything else, not even in the program itself. So comment this
 # while you setup the keybindings inside the program.
