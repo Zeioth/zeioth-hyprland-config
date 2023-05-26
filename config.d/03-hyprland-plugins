@@ -6,16 +6,16 @@
 
 
 # PLUGINS ARE HIGHLY EXPERIMENTAL AND DOESN'T WORK JUST YET.
-plugin:hyprfocus {
-    enabled = true
-    opacity = 0.7
-
-    bezier = flashIn, 0.5,0.0,1.0,0.5
-    bezier = flashOut, 0.0,0.5,0.5,1.0
-
-    flash_in_bezier = flashIn
-    flash_in_speed = 1
-
-    flash_out_bezier = flashOut
-    flash_out_speed = 5
-}
+# plugin:hyprfocus {
+#     enabled = true
+#     opacity = 0.7
+#
+#     bezier = flashIn, 0.5,0.0,1.0,0.5
+#     bezier = flashOut, 0.0,0.5,0.5,1.0
+#
+#     flash_in_bezier = flashIn
+#     flash_in_speed = 1
+#
+#     flash_out_bezier = flashOut
+#     flash_out_speed = 5
+# }
