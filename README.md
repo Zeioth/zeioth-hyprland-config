@@ -4,7 +4,7 @@ Clone the directory into `~/.config` and use it as base for your config. Or just
 ## FEATURES
 
  * Complex setup where most likely you will find the solution to most common issues you encounter while setting up hyprland.
- * Bre-binded modes to manage `screenshots` (local and/or to the cloud),
+ * Pre-binded modes to manage `screenshots` (local and/or to the cloud),
   `displays`, `move`, `resize`, `shutdown`.
  * Variables isolated from the rest of the config.
  * Feature rich. Delete what you don't need.
