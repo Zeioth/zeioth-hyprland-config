@@ -1,10 +1,10 @@
-# Definitions files: 
+# Definitions files:
 # ../aliases.d/00-themeing-aliases
 
 
 # HYPRLAND ENV VARS
 # ================================================
-# Clarification: 
+# Clarification:
 # I'm defining them on my .profile instead of here
 # beause I want them to affect all my desktop environments.
 
@@ -37,19 +37,19 @@ exec-once=hyprctl setcursor $cursor_theme $cursor_size
 
 # WINDOWS AND BORDERS
 # ================================================
-general { 
+general {
   layout = dwindle
 
   # Cursor
-  cursor_inactive_timeout = 899000 
+  cursor_inactive_timeout = 900
   no_cursor_warps = false
 
   # Gaps
-  gaps_in = 0
-  gaps_out = 0
+  gaps_in = 5
+  gaps_out = 5
 
   # Borders
-  border_size = 0
+  border_size = 1
   col.active_border = 0xff4477ff
   col.inactive_border = 0xff2f343f
 }
@@ -69,7 +69,7 @@ misc {
 decoration {
 
     # Round borders
-    rounding = 0
+    rounding = 10
     multisample_edges = true
 
     # Shadow
@@ -92,11 +92,11 @@ animations {
 
     # BEZIERS    NAME        X0    Y0   X1   Y1
     bezier    =  myBezier,   0.05, 0.9, 0.1, 1.05
-    
+
     # ANIMATION  NAME        ON    SPEED  CURVE      # STYLE
     animation =  windows,    1,    2,     myBezier
     animation =  windowsOut, 1,    2,     default,   popin 80%
-    animation =  border,     1,    1,     default
+    animation =  border,     1,    5,     default
     animation =  fadeIn,     1,    2,     default
     animation =  fadeOut,    1,    2,     default
     animation =  workspaces, 1,    2,     default
