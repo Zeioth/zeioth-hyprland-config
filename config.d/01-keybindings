@@ -17,7 +17,7 @@ bindm =    ALT_L,      mouse:273,   resizewindow
 # - System
 # BIND     MOD            KEY       DISPATCHER      VALUE
 bind =     $mod SHIFT,    q,        killactive      # window
-bind =     $mod SHIFT,    c,        exec,           forcerendererreload
+bind =     $mod SHIFT,    c,        exec,           pkill -9 waybar && hyprctl dispatch exec waybar && pkill -9 hyprpaper && hyprctl dispatch exec hyprpaper && hyprctl reload
 
 # - Terminal
 # BIND     MOD            KEY       DISPATCHER      VALUE
@@ -115,10 +115,16 @@ bind =    $mod SHIFT,    e,        submap,          mode_shutdown
 # Important: In order for hyprland scratchpad to work properly, you must create
 #            a rule where anything going into scratchpat, becomes NOT float.
 
+# Wofi scratchpad → More powerful but requires naming terminal windows.
+# BIND    MOD            KEY       DISPATCHER                VALUE
+# bind =  $mod SHIFT,      minus,    exec,                     hypr-scratchpad
+# bind =  $mod,            minus,    exec,                     hypr-scratchpad -l -g
+# bind =  $mod SHIFT CTRL, minus,   togglespecialworkspace
+
+# Extra ws scratchpad → Less powerful but nicer.
 # BIND    MOD            KEY       DISPATCHER                VALUE
 bind =    $mod SHIFT,    minus,    exec,                     hypr-fix-special
 bind =    $mod,          minus,    togglespecialworkspace
-# bind =    $mod SHIFT,    minus,    movetoworkspace,          special
 
 # LAYOUT
 # ============================================================================
