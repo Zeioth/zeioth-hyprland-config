@@ -32,12 +32,12 @@ misc {
 
 # See https://wiki.hyprland.org/Configuring/Monitors/
 # BUG: ATM using 10 bits mode will cause grim and OBS to render black.
-monitor = $screen1,3840x2160@60,0x0,1,bitdepth,8
-monitor = $screen2,3840x2160@60,3840x0,1,bitdepth,8
-monitor = $screen3,3840x2160@60,7680x0,1,bitdepth,8
-monitor = $screen4,3840x2160@60,0x2160,1,bitdepth,8
-monitor = $screen5,3840x2160@60,3840x2160,1,bitdepth,8
-monitor = $screen6,3840x2160@60,7680x2160,1,bitdepth,8
+monitor = $screen1,3840x2160@60,0x0,1,bitdepth,10
+monitor = $screen2,3840x2160@60,3840x0,1,bitdepth,10
+monitor = $screen3,3840x2160@60,7680x0,1,bitdepth,10
+monitor = $screen4,3840x2160@60,0x2160,1,bitdepth,10
+monitor = $screen5,3840x2160@60,3840x2160,1,bitdepth,10
+monitor = $screen6,3840x2160@60,7680x2160,1,bitdepth,10
 
 # See: https://wiki.hyprland.org/Configuring/Workspace-Rules/
 # WORKSPACE       MONITOR           IS DEFAULT

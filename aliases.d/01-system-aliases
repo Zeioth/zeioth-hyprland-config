@@ -1,5 +1,5 @@
-# dbus docs:    https://wiki.archlinux.org/title/Systemd/User#Environment_variables 
-# flatpak docs: https://www.reddit.com/r/flatpak/comments/131qsvf/passing_env_vars_bottles_ignores_flatpak_override/ 
+# dbus docs:    https://wiki.archlinux.org/title/Systemd/User#Environment_variables
+# flatpak docs: https://www.reddit.com/r/flatpak/comments/131qsvf/passing_env_vars_bottles_ignores_flatpak_override/
 # This is necessary for them to apply the themes to hyprland-share-pickr.
 
 
@@ -10,11 +10,11 @@
 $mod = SUPER
 
 # Terminal emulator
-$term                    = footclient -t xterm-256color
-$term_scratch            = footclient -t xterm-256color -a scratchpad
-$term_scratch_standalone = foot -a scratchpad
-$tmux                    = foot-tmux
-$foot_server             = foot --server
+$term                    = ENABLE_VKBASALT=1 footclient -t xterm-256color
+$term_scratch            = ENABLE_VKBASALT=1 footclient -t xterm-256color -a scratchpad
+$term_scratch_standalone = ENABLE_VKBASALT=1 foot -a scratchpad
+$tmux                    = ENABLE_VKBASALT=1 foot-tmux
+$foot_server             = ENABLE_VKBASALT=1 foot --server
 
 # Displays
 $screen1 = DP-1
@@ -28,18 +28,18 @@ $screen6 = DP-5
 $launcher = wofi -p run
 
 # Task manager
-$task_manager = pkill -9 fkill; $term_scratch -T "Task Killer - fkill" fzf-kill 
+$task_manager = pkill -9 fkill; $term_scratch -T "Task Killer - fkill" fzf-kill
 
 # Notification daemon configuration
 $notifications = mako
 
 
 # Widgets - Note: A widget cannot leave its display, but you can create many.
-$widgets = hyprwidgets 
+$widgets = hyprwidgets
 
 
 # Locking
-# Currently callig a shell script from bin because atm hyprctl 
+# Currently callig a shell script from bin because atm hyprctl
 # dispatch exec cannot parse the command correctly.
 $locking            = hyprlock
 
@@ -55,7 +55,7 @@ $sink_volume_mute  = pactl get-sink-mute @DEFAULT_SINK@ | sed -En "/no/ s/.*/$($
 
 # Volume (microphone)
 $source_volume               = pactl get-source-volume @DEFAULT_SOURCE@ | grep '^Volume:' | cut -d / -f 2 | tr -d ' ' | sed 's/%//'
-$sink_microphone_volume_mute = pactl get-source-mute @DEFAULT_SOURCE@ | sed -En "/no/ s/.*/$($source_volume)/p; /yes/ s/.*/0/p" 
+$sink_microphone_volume_mute = pactl get-source-mute @DEFAULT_SOURCE@ | sed -En "/no/ s/.*/$($source_volume)/p; /yes/ s/.*/0/p"
 
 # Other system artifacts
 $systemctl_env      = systemctl --user import-environment

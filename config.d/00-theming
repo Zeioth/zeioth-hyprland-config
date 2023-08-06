@@ -79,11 +79,12 @@ decoration {
     col.shadow = rgba(1a1a1aee)
 
     # Blur
-    blur = false
-    blur_new_optimizations = true
-    blur_size = 3
-    blur_passes = 1
-
+    blur {
+      enabled = false
+      new_optimizations = true
+      size = 3
+      passes = 1
+    }
 }
 
 # See: https://wiki.hyprland.org/Configuring/Animations
