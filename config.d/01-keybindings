@@ -53,8 +53,6 @@ bind =     $mod,          3,        workspace,      3
 bind =     $mod,          4,        workspace,      4
 bind =     $mod,          5,        workspace,      5
 bind =     $mod,          6,        workspace,      6
-bind =     $mod,          7,        workspace,      7
-bind =     $mod,          8,        workspace,      8
 
 # - Move focussed window to workspace
 # BIND    MOD            KEY       DISPATCHER      VALUE
@@ -64,9 +62,6 @@ bind =    $mod SHIFT,    3,        movetoworkspace, 3
 bind =    $mod SHIFT,    4,        movetoworkspace, 4
 bind =    $mod SHIFT,    5,        movetoworkspace, 5
 bind =    $mod SHIFT,    6,        movetoworkspace, 6
-bind =    $mod SHIFT,    7,        movetoworkspace, 7
-bind =    $mod SHIFT,    8,        movetoworkspace, 8
-
 
 # UTILITIES
 # ============================================================================
