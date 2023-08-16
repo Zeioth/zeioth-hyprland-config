@@ -30,4 +30,3 @@ You can go into `./modes.d/displays` and modify the file to work as you desire. 
 # HOW TO USE MAN
 
 `man ./help.man` for help about the config.
-`man 5 hypr`     for a complete reference.
