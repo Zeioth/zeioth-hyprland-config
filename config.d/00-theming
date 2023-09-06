@@ -94,13 +94,14 @@ animations {
     # BEZIERS    NAME        X0    Y0   X1   Y1
     bezier    =  myBezier,   0.05, 0.9, 0.1, 1.05
 
-    # ANIMATION  NAME        ON    SPEED  CURVE      # STYLE
-    animation =  windows,    1,    2,     myBezier
-    animation =  windowsOut, 1,    2,     default,   popin 80%
-    animation =  border,     1,    5,     default
-    animation =  fadeIn,     1,    2,     default
-    animation =  fadeOut,    1,    2,     default
-    animation =  workspaces, 1,    2,     default
+    # ANIMATION  NAME              ON    SPEED  CURVE      # STYLE
+    animation =  windows,          1,    2,     myBezier
+    animation =  windowsOut,       1,    2,     default,   popin 80%
+    animation =  border,           1,    5,     default
+    animation =  fadeIn,           1,    2,     default
+    animation =  fadeOut,          1,    2,     default
+    animation =  workspaces,       1,    6,     default,  fade
+    animation =  specialWorkspace, 1,    3,     myBezier,   slide
 }
 
 
