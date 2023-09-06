@@ -15,7 +15,7 @@ Zeioth's personal hyprland congfiguration
  \fBhardware.d\fP hardware settings.
  \fBmodes.d\fP    keyboard modes.
 .SH EXAMPLES
- \fB1)\fP Add a variable to the file you choose on     \fB→ ./variables.d\fP
+ \fB1)\fP Add a variable to the file you choose on   \fB→ ./variables.d\fP
  \fB2)\fP Call it from a configuration you choose in \fB→ ./config.d\fP
  \fB3)\fP You can also call modes from               \fB→ ./config.d/keybindings \fP
 .SH BUGS
