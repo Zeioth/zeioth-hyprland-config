@@ -12,7 +12,7 @@ submap=mode_displays
 #BIND     MOD    KEY       DISPATCHER       VALUE
 bind =    ,      o,        dpms,            off $screen1
 bind =    ,      o,        dpms,            off $screen2
-bind =    ,      o,        dpms,            off $screen3 
+bind =    ,      o,        dpms,            off $screen3
 bind =    ,      o,        dpms,            on  $screen4
 bind =    ,      o,        dpms,            off $screen5
 bind =    ,      o,        dpms,            off $screen6
@@ -21,7 +21,7 @@ bind =    ,      o,        dpms,            off $screen6
 #BIND     MOD    KEY       DISPATCHER       VALUE
 bind =    ,      t,        dpms,            off $screen1
 bind =    ,      t,        dpms,            off $screen2
-bind =    ,      t,        dpms,            off $screen3 
+bind =    ,      t,        dpms,            off $screen3
 bind =    ,      t,        dpms,            on  $screen4
 bind =    ,      t,        dpms,            on  $screen5
 bind =    ,      t,        dpms,            on  $screen6
@@ -30,7 +30,7 @@ bind =    ,      t,        dpms,            on  $screen6
 #BIND     MOD    KEY       DISPATCHER       VALUE
 bind =    ,      f,        dpms,            off $screen1
 bind =    ,      f,        dpms,            on  $screen2
-bind =    ,      f,        dpms,            off $screen3 
+bind =    ,      f,        dpms,            off $screen3
 bind =    ,      f,        dpms,            on  $screen4
 bind =    ,      f,        dpms,            on  $screen5
 bind =    ,      f,        dpms,            on  $screen6
@@ -39,18 +39,18 @@ bind =    ,      f,        dpms,            on  $screen6
 #BIND     MOD    KEY       DISPATCHER       VALUE
 bind =    ,      s,        dpms,            on $screen1
 bind =    ,      s,        dpms,            on $screen2
-bind =    ,      s,        dpms,            on $screen3 
+bind =    ,      s,        dpms,            on $screen3
 bind =    ,      s,        dpms,            on $screen4
 bind =    ,      s,        dpms,            on $screen5
 bind =    ,      s,        dpms,            on $screen6
 
 # Exit conditions
 #BIND     MOD    KEY       DISPATCHER       VALUE
-bind =    ,      escape,   submap,          reset 
-bind =    ,      o,        submap,          reset 
-bind =    ,      t,        submap,          reset 
-bind =    ,      f,        submap,          reset 
-bind =    ,      s,        submap,          reset 
+bind =    ,      escape,   submap,          reset
+bind =    ,      o,        submap,          reset
+bind =    ,      t,        submap,          reset
+bind =    ,      f,        submap,          reset
+bind =    ,      s,        submap,          reset
 
 # -------------------------------------
 
@@ -69,7 +69,7 @@ submap=reset
 
   # NORMAL
   # ======================================================================
-  # This special mode is not listed: We use it for capped FPS games like 
+  # This special mode is not listed: We use it for capped FPS games like
   # Street fighter, to get minimum latency.
 #  $bindsym i mode "default", exec swaymsg \
 #    output $screen1 disable; \

@@ -1,9 +1,9 @@
-# USER 
+# USER
 # ==============================================================
 
 # ENABLED
 exec-once =         $corectrl
-exec-once =         thunderbird-wayland
+#exec-once =         thunderbird-wayland
 #exec-once =         hp-systray
 
 # DISABLED

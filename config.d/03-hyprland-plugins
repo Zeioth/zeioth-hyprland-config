@@ -1,5 +1,5 @@
 # Plugins are enabled in:
-# ../autostart.d/03-hyprland-plugins.conf
+# ../autostart.d/03-hyprland-plugins
 
 # Plugins must be compiled and installed in order to work.
 # See: https://wiki.hyprland.org/Plugins/Using-Plugins/#installing--using-plugins
