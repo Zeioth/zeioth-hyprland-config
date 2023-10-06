@@ -1,7 +1,7 @@
 # TODO: There is no waybar integration in hyprland, so we could
 #       display an overlay with the instructions while the mode is active.
-# TODO: After choosing an option, end this mode.
-
+# NOTE: Turning on/off monitors can cause waybar/hyprpaper to crash sometimes.
+#       To ensure they keep running, we restart them after turning on/off a monitor.
 submap=mode_displays
 
 
@@ -10,39 +10,19 @@ submap=mode_displays
 
 # One display
 #BIND     MOD    KEY       DISPATCHER       VALUE
-bind =    ,      o,        dpms,            off $screen1
-bind =    ,      o,        dpms,            off $screen2
-bind =    ,      o,        dpms,            off $screen3
-bind =    ,      o,        dpms,            on  $screen4
-bind =    ,      o,        dpms,            off $screen5
-bind =    ,      o,        dpms,            off $screen6
+bind =    ,      o,        exec,            hyprctl --batch "reload; keyword monitor $screen1, disable; keyword monitor $screen2, disable; keyword monitor $screen3, disable; keyword monitor $screen5, disable; keyword monitor $screen6, disable; dispatch exec pkill -9 waybar && sleep 0.1 && waybar; dispatch exec pkill -9 hyprpaper && sleep 0.1 && hyprpaper"
 
 # Three displays
 #BIND     MOD    KEY       DISPATCHER       VALUE
-bind =    ,      t,        dpms,            off $screen1
-bind =    ,      t,        dpms,            off $screen2
-bind =    ,      t,        dpms,            off $screen3
-bind =    ,      t,        dpms,            on  $screen4
-bind =    ,      t,        dpms,            on  $screen5
-bind =    ,      t,        dpms,            on  $screen6
+bind =    ,      t,        exec,            hyprctl --batch "reload; keyword monitor $screen1, disable; keyword monitor $screen2, disable; keyword monitor $screen3, disable; dispatch exec pkill -9 waybar && sleep 0.1 && waybar; dispatch exec pkill -9 hyprpaper && sleep 0.1 && hyprpaper"
 
 # Four displays
 #BIND     MOD    KEY       DISPATCHER       VALUE
-bind =    ,      f,        dpms,            off $screen1
-bind =    ,      f,        dpms,            on  $screen2
-bind =    ,      f,        dpms,            off $screen3
-bind =    ,      f,        dpms,            on  $screen4
-bind =    ,      f,        dpms,            on  $screen5
-bind =    ,      f,        dpms,            on  $screen6
+bind =    ,      f,        exec,            hyprctl --batch "reload; keyword monitor $screen1, disable; keyword monitor $screen3, disable; dispatch exec pkill -9 waybar && sleep 0.1 && waybar; dispatch exec pkill -9 hyprpaper && sleep 0.1 && hyprpaper"
 
 # Six displays
 #BIND     MOD    KEY       DISPATCHER       VALUE
-bind =    ,      s,        dpms,            on $screen1
-bind =    ,      s,        dpms,            on $screen2
-bind =    ,      s,        dpms,            on $screen3
-bind =    ,      s,        dpms,            on $screen4
-bind =    ,      s,        dpms,            on $screen5
-bind =    ,      s,        dpms,            on $screen6
+bind =    ,      s,        exec,            hyprctl --batch "reload; dispatch exec pkill -9 waybar && sleep 0.1 && waybar; dispatch exec pkill -9 hyprpaper && sleep 0.1 && hyprpaper"
 
 # Exit conditions
 #BIND     MOD    KEY       DISPATCHER       VALUE
