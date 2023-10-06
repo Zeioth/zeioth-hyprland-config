@@ -47,21 +47,21 @@ bind  =  ,    XF86PowerOff,           exec,        $shutdown
 # - Switch to workspace
 #   Note:  workspaces are asociated ot monitors on ../hardware.d/displays
 # BIND     MOD            KEY       DISPATCHER      VALUE
-bind =     $mod,          1,        workspace,      1
-bind =     $mod,          2,        workspace,      2
-bind =     $mod,          3,        workspace,      3
-bind =     $mod,          4,        workspace,      4
-bind =     $mod,          5,        workspace,      5
-bind =     $mod,          6,        workspace,      6
+bind =     $mod,          1,        workspace,      name:1
+bind =     $mod,          2,        workspace,      name:2
+bind =     $mod,          3,        workspace,      name:3
+bind =     $mod,          4,        workspace,      name:4
+bind =     $mod,          5,        workspace,      name:5
+bind =     $mod,          6,        workspace,      name:6
 
 # - Move focussed window to workspace
 # BIND    MOD            KEY       DISPATCHER      VALUE
-bind =    $mod SHIFT,    1,        movetoworkspace, 1
-bind =    $mod SHIFT,    2,        movetoworkspace, 2
-bind =    $mod SHIFT,    3,        movetoworkspace, 3
-bind =    $mod SHIFT,    4,        movetoworkspace, 4
-bind =    $mod SHIFT,    5,        movetoworkspace, 5
-bind =    $mod SHIFT,    6,        movetoworkspace, 6
+bind =    $mod SHIFT,    1,        movetoworkspace, name:1
+bind =    $mod SHIFT,    2,        movetoworkspace, name:2
+bind =    $mod SHIFT,    3,        movetoworkspace, name:3
+bind =    $mod SHIFT,    4,        movetoworkspace, name:4
+bind =    $mod SHIFT,    5,        movetoworkspace, name:5
+bind =    $mod SHIFT,    6,        movetoworkspace, name:6
 
 # UTILITIES
 # ============================================================================

@@ -32,21 +32,23 @@ misc {
 
 # BUG: ATM using 10 bits mode will cause OBS to render black.
 # See https://wiki.hyprland.org/Configuring/Monitors/
-# SCREEN            RESOLUTION    POS        ON  COLOR
-monitor = $screen1, 3840x2160@60, 0x0,       1,  bitdepth,10
-monitor = $screen2, 3840x2160@60, 3840x0,    1,  bitdepth,10
-monitor = $screen3, 3840x2160@60, 7680x0,    1,  bitdepth,10
-monitor = $screen4, 3840x2160@60, 0x2160,    1,  bitdepth,10
-monitor = $screen5, 3840x2160@60, 3840x2160, 1,  bitdepth,10
-monitor = $screen6, 3840x2160@60, 7680x2160, 1,  bitdepth,10
+# SCREEN            RESOLUTION    POS          SCALE  COLOR
+monitor = $screen1, 3840x2160@60, 0x0,         1,     bitdepth,10
+monitor = $screen2, 3840x2160@60, 3840x0,      1,     bitdepth,10
+monitor = $screen3, 3840x2160@60, 7680x0,      1,     bitdepth,10
+monitor = $screen4, 3840x2160@60, 0x2160,      1,     bitdepth,10
+monitor = $screen5, 3840x2160@60, 3840x2160,   1,     bitdepth,10
+monitor = $screen6, 3840x2160@60, 7680x2160,   1,     bitdepth,10
 
 # See: https://wiki.hyprland.org/Configuring/Workspace-Rules/
+# Note: If you prefer a name instead of a number, do it like name:myname.
+#       Don't use name to set a number or it will cause unexpected bugs.
 # WORKSPACE       MONITOR           IS DEFAULT
-workspace=name:1, monitor:$screen4, default:true
-workspace=name:2, monitor:$screen5, default:true
-workspace=name:3, monitor:$screen6, default:true
-workspace=name:4, monitor:$screen1, default:true
-workspace=name:5, monitor:$screen2, default:true
-workspace=name:6, monitor:$screen3, default:true
+workspace=name:1,      monitor:$screen4, default:true
+workspace=name:2,      monitor:$screen5, default:true
+workspace=name:3,      monitor:$screen6, default:true
+workspace=name:4,      monitor:$screen1, default:true
+workspace=name:5,      monitor:$screen2, default:true
+workspace=name:6,      monitor:$screen3, default:true
 
 
