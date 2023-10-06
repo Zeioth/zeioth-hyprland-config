@@ -55,7 +55,7 @@ general {
   col.inactive_border = 0xff2f343f
 
   # Resize
-  resize_on_border = true
+  resize_on_border = false
   hover_icon_on_border = false
 }
 
@@ -75,7 +75,6 @@ decoration {
 
     # Round borders
     rounding = 10
-    multisample_edges = true
 
     # Shadow
     drop_shadow = false
