@@ -7,5 +7,4 @@ exec-once =         $corectrl
 #exec-once =         hp-systray
 
 # DISABLED
-# exec-once =       $vim_backlog
 # exec-once =       gamescope-custom

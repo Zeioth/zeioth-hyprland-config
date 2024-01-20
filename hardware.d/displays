@@ -12,6 +12,7 @@
 # output * subpixel none
 
 misc {
+  # Variable refresh rate
   vfr = true
   vrr = true
   #no_direct_scanout = false
@@ -23,7 +24,7 @@ misc {
   # the monitor's refresh rate. In theory with vrr at 84FPS we don't need this.
   render_ahead_safezone = 5
 
-  # move this settings somewhere else
+  # Allow applications to demand focus
   focus_on_activate = true
 
   # Enable if you use personalized wallpapers
@@ -41,14 +42,12 @@ monitor = $screen5, 3840x2160@60, 3840x2160,   1,     bitdepth,10
 monitor = $screen6, 3840x2160@60, 7680x2160,   1,     bitdepth,10
 
 # See: https://wiki.hyprland.org/Configuring/Workspace-Rules/
-# Note: If you prefer a name instead of a number, do it like name:myname.
-#       Don't use name to set a number or it will cause unexpected bugs.
 # WORKSPACE       MONITOR           IS DEFAULT
-workspace=name:1,      monitor:$screen4, default:true
-workspace=name:2,      monitor:$screen5, default:true
-workspace=name:3,      monitor:$screen6, default:true
-workspace=name:4,      monitor:$screen1, default:true
-workspace=name:5,      monitor:$screen2, default:true
-workspace=name:6,      monitor:$screen3, default:true
+workspace=1,      monitor:$screen4, default:true
+workspace=2,      monitor:$screen5, default:true
+workspace=3,      monitor:$screen6, default:true
+workspace=4,      monitor:$screen1, default:true
+workspace=5,      monitor:$screen2, default:true
+workspace=6,      monitor:$screen3, default:true
 
 
