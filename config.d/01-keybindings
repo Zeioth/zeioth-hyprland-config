@@ -72,7 +72,7 @@ bind =    $mod SHIFT,    h,        exec,           $help_keyboard
 bind =    $mod SHIFT,    v,        exec,           $help_nvim
 bind =    $mod CTRL,     w,        exec,           $weather
 bind =    $mod,          F1,       exec,           $tui_file_browser #  ranger
-bind =    $mod,          F2,       exec,           $gui_file_browser #  pcmanfm
+bind =    $mod,          F2,       exec,           $gui_file_browser #  thunar
 bind =    $mod,          F6,       exec,           $nvim_editor
 bind =    $mod,          F7,       exec,           $nvim_backlog
 bind =    $mod,          F8,       exec,           $calc
@@ -86,8 +86,8 @@ bind =    $mod CTRL,     s,        exec,           $chatgpt
 # - Swayr (Show running windows and more)
 # TODO: Comprueba porque no funcionan
 # BIND    MOD            KEY       DISPATCHER      VALUE
-bind =    $mod SHIFT,    x,        exec,           $task_manager
-bind =    $mod,          tab,      exec,           $task_manager
+bind =    $mod SHIFT,    x,        exec,           $task_killer
+bind =    $mod,          tab,      exec,           $task_killer
 #bind =    $mod,          tab,      exec,           $swayr-wintab
 #bind =    $mod SHIFT,    x,        exec,           $swayr-xkill
 #bind =    $mod,          next,     exec,           $swayr-next
