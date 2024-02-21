@@ -5,9 +5,8 @@
 $tui_file_browser = TERMCMD="foot -a 'scratchpad'" $term_scratch_standalone -T 'Ranger - File Manager' ranger
 $gui_file_browser = thunar
 
-$vim_editor  = $term -T 'VIM - Editor'  vim -S ~/.vim_runtime/temp_dirs/sessions/meta-editor.vim
-$vim_backlog = $term -T 'VIM - Backlog' vim -S ~/.vim_runtime/temp_dirs/sessions/meta-backlogs.vim
-$vim         = $term -T 'VIM - Editor'  vim
+$nvim_editor  = $term -T 'NVIM - Editor'  nvim -S ~/.vim_runtime/temp_dirs/sessions/meta-editor.vim
+$nvim_backlog = $term -T 'NVIM - Backlog' nvim -S ~/.vim_runtime/temp_dirs/sessions/meta-backlogs.vim
 
 # No need no use sessions anymore, we have an automated session manager
 $nvim         = $term -T 'NVIM - Editor'  nvim
