@@ -5,8 +5,9 @@
 # prevents idle while any source of sound is reproducing.
 # can be tested by checking all apps apre corked with: pactl list sink-inputs
 # - wob
-# It is not here because it runs as a service
-# See ~/.local/share/systemd/user/wob.service
+# It is not here because it runs as a service.
+# If you find any issue run 'fix-wob' to fix it.
+
 
 # EXAMPLE → many programs in 1 subprocess [sync] - (Errors won't be logged)
 # exec-once = waybar & hyprpaper & firefox
