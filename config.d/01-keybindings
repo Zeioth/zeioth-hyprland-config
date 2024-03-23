@@ -164,7 +164,7 @@ bind = $mod SHIFT, l, exec, $locking
 # ============================================================================
 
 # TODO: Migrate from sway
-## Navigation // Move focus // $mod + ↑ ↓ ← → ##
+# Navigation // Move focus // $mod + ↑ ↓ ← → ##
 # bind = $mod, Left focus left
 # bind = $mod, Down focus down
 # bind = $mod, Up focus up

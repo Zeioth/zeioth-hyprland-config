@@ -21,13 +21,11 @@
 # ================================================
 # This is the only place where you need to set GTK scaling
 $gnome-schema = org.gnome.desktop.interface
-exec {
-  gsettings set $gnome-schema gtk-theme $system_theme
-  gsettings set $gnome-schema icon-theme $system_icons
-  gsettings set org.gnome.desktop.interface text-scaling-factor $system_dpi_scaling_factor
-  gsettings set $gnome-schema cursor-theme $cursor_theme
-  gsettings set org.gnome.desktop.interface cursor-size $cursor_size
-}
+exec=gsettings set $gnome-schema gtk-theme $system_theme
+exec=gsettings set $gnome-schema icon-theme $system_icons
+exec=gsettings set org.gnome.desktop.interface text-scaling-factor $system_dpi_scaling_factor
+exec=gsettings set $gnome-schema cursor-theme $cursor_theme
+exec=gsettings set org.gnome.desktop.interface cursor-size $cursor_size
 
 
 # MOUSE THEME AND SIZE
@@ -119,8 +117,11 @@ dwindle {
 }
 
 # See: https://wiki.hyprland.org/Configuring/Master-Layout
-master { new_is_master = true }
+master {
+  new_is_master = true
+}
 
 # See: https://wiki.hyprland.org/Configuring/Variables
-gestures { workspace_swipe = off }
-
+gestures {
+  workspace_swipe = off
+}

@@ -30,11 +30,9 @@ exec-once      =  $swork_style
 exec-once      =  $spice_vdagent
 exec-once      =  $idle
 exec-once      =  $idle_audio_inhibit
-exec           =  $wallpapers # Add this too ../config.d/02-theming too disable_hyprland_logo
+exec-once      =  ~/.local/bin/fix-wob
+exec           =  $wallpapers
+
 
 # DISABLED
-# Nothing here
-#exec-once      =  $swayd
-
-# LOADED PLUGINS
-exec-once      =   hyprctl plugin load /home/zeioth/.local/share/hyprfocus/hyprfocus.so
+# exec-once      =  $swayd
