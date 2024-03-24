@@ -5,16 +5,24 @@
 # HYPRLAND ENV VARS
 # ================================================
 # Clarification:
-# I'm defining them on my .profile instead of here
+# I'm also defining them on my .profile
 # beause I want them to affect all my desktop environments.
 
 # env = QT_QPA_PLATFORM,wayland
 # env = QT_STYLE_OVERRIDE,kvantum
-# env = XCURSOR_SIZE=108
 # env = QT_SCALE_FACTOR,2.6
 # env = ELM_SCALE,2.6
 # env = GDK_SCALE,2.6
 # env = SAL_USE_VCLPLUGIN,gtk3
+
+# fallback xcursor
+env = XCURSOR_THEME,$cursor_theme
+env = XCURSOR_SIZE,$cursor_size
+
+# hyprland cursor
+env = HYPRCURSOR_THEME,$cursor_theme
+env = HYPRCURSOR_SIZE,$cursor_size
+
 
 
 # GTK THEME
