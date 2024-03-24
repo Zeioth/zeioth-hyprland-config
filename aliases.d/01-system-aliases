@@ -43,7 +43,7 @@ $widgets = hyprwidgets
 # dispatch exec cannot parse the command correctly.
 $locking            = hyprlock
 
-### Idle configuration →  [requires sway-audio-idle-inhibit]
+# Idle configuration →  [requires sway-audio-idle-inhibit]
 $idle               = hypridle
 $idle_audio_inhibit = sway-audio-idle-inhibit
 
