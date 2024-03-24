@@ -63,6 +63,9 @@ general {
   # Resize
   resize_on_border = false
   hover_icon_on_border = false
+
+  # Allow tearing (you must add a window rule to the window to allow tearing)
+  allow_tearing = false
 }
 
 misc {

@@ -42,6 +42,9 @@ windowrulev2   =    float,             class:^(SVPManager)$
 windowrulev2   =    tile,              class:^(file-roller)$,title:^(Archive manager)
 windowrulev2   =    float,             class:^(file-roller)$,title:^(Extract archive)
 
+# Tearing
+windowrulev2   =    immediate,         class:^(steam_app_1172470)$ # Apex Legends
+
 # Animation        RULE               WINDOW
 # windowrulev2  =  noanim,            class:^(wofi)$
 # windowrulev2  =  dimaround,         class:^(scratchpad)$
