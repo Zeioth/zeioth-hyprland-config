@@ -53,6 +53,10 @@ layerrule       =   noanim,            wofi
 # HOT FIXES
 # ============================================================================
 
-# Steam menus dissapearing on mouseover
+# Fix: Steam menus dissapearing on mouseover
 windowrulev2   =   stayfocused,        title:^()$,class:^(steam)$
 windowrulev2   =   minsize 1 1,        title:^()$,class:^(steam)$
+
+# Fix: Steam starts in a broken position as float window
+windowrulev2   =   tile,               class:^(steam)$
+windowrulev2   =   fullscreen,         class:^(steam)$
