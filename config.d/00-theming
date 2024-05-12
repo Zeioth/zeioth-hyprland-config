@@ -47,8 +47,6 @@ general {
   layout = dwindle
 
   # Cursor
-  cursor_inactive_timeout = 900
-  no_cursor_warps = false
   no_focus_fallback = true
 
   # Gaps
@@ -66,6 +64,11 @@ general {
 
   # Allow tearing (you must add a window rule to the window to allow tearing)
   allow_tearing = false
+}
+
+cursor {
+  inactive_timeout = 900
+  no_warps = false
 }
 
 misc {

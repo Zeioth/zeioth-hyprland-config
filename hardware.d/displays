@@ -16,7 +16,7 @@ misc {
   vfr = true
   # Enabling vrr may introduce stuttering if the hz you set in your monitor is
   # over its vrr operational range. aka, if you OC your monitor EDID.
-  vrr = false
+  vrr = true
   #no_direct_scanout = false
 
   # Currently buggy
@@ -24,7 +24,7 @@ misc {
 
   # This might affect latency compensation in games if you are rendering above
   # the monitor's refresh rate. In theory with vrr at 84FPS we don't need this.
-  render_ahead_safezone = 0
+  render_ahead_safezone = 5
 
   # Allow applications to demand focus
   focus_on_activate = true
@@ -33,13 +33,17 @@ misc {
   disable_hyprland_logo = true
 }
 
+cursor {
+  default_monitor = $screen5 # Monitor where the cursor goes on startup.
+}
+
 # BUG: ATM using 10 bits mode will cause OBS to render black.
 # See https://wiki.hyprland.org/Configuring/Monitors/
 # SCREEN            RESOLUTION         POS          SCALE  COLOR
 monitor = $screen1, 3840x2160@60,      0x0,         1,     bitdepth,10
 monitor = $screen2, 3840x2160@60,      3840x0,      1,     bitdepth,10
 monitor = $screen3, 3840x2160@60,      7680x0,      1,     bitdepth,10
-monitor = $screen4, 3840x2160@70.98Hz, 0x2160,      1,     bitdepth,10
+monitor = $screen4, 3840x2160@60,      0x2160,      1,     bitdepth,10
 monitor = $screen5, 3840x2160@60,      3840x2160,   1,     bitdepth,10
 monitor = $screen6, 3840x2160@60,      7680x2160,   1,     bitdepth,10
 
