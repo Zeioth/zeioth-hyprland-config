@@ -5,7 +5,8 @@
 # $tui_file_browser = TERMCMD="foot -a 'scratchpad'" $term_scratch_standalone -T 'Ranger - File Manager' ranger
 
 # File edition
-$tui_file_browser = TERMCMD="foot -a 'scratchpad'" foot -t xterm-256color -a 'scratchpad' -T 'Ranger - FIle Manager' ranger
+# $tui_file_browser = TERMCMD="foot -a 'scratchpad'" foot -t xterm-256color -a 'scratchpad' -T 'Ranger - FIle Manager' ranger
+$tui_file_browser = foot -t xterm-256color -a 'scratchpad' -T 'Yazi - FIle Manager' yazi
 $gui_file_browser = thunar
 
 $nvim_editor  = $term -T 'NVIM - Editor'  nvim -S ~/.vim_runtime/temp_dirs/sessions/meta-editor.vim
