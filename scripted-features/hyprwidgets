@@ -1,0 +1,17 @@
+#/bin/bash
+
+
+# IT WON'T WORK JUT YET
+# nwg-wrapper only work on sway currently.
+
+nwg-wrapper \
+   -o $screen5 \
+   -s anime-op.sh \
+   -r 5000 \
+   -c anime-op.css \
+   -p center \
+   -mr 50 \
+   -a start \
+   -mt 50 \
+   -j right \
+   --layer 1

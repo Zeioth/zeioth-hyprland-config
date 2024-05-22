@@ -1,0 +1,40 @@
+#!/usr/bin/bash
+
+CACHE_DIR=~/.cache/hypr-special
+CACHE_FILE_LIMIT=2000000
+
+# Prepare
+mkdir -p "$CACHE_DIR"
+is_float=$(hyprctl activewindow -j | jaq .floating)
+is_on_special=$(hyprctl activewindow -j | jaq '.workspace.name == "special:special"')
+
+# Create cache file
+address=$(hyprctl activewindow -j | jaq -r .address)
+temp_fname="$CACHE_DIR/$address"
+! $is_on_special && echo "$is_float" > "$temp_fname"
+
+# Send window to special workspace
+if $is_float; then
+	hyprctl --batch "dispatch togglefloating active; dispatch movetoworkspacesilent special"
+else
+	hyprctl dispatch movetoworkspacesilent special
+fi
+
+# Send window back from special workspace
+$is_on_special && read -r state < "$temp_fname" &&
+if $state; then
+	hyprctl --batch "dispatch movetoworkspacesilent +0; dispatch togglefloating active; dispatch centerwindow"
+else
+	hyprctl dispatch movetoworkspacesilent +0
+fi
+
+# If cache file limit is exceeded:
+# Delete any exceeding cache file starting by the oldest.
+cache_files=$(find "$CACHE_DIR" -maxdepth 1 -type f -printf '%T@ %p\n' | sort -n | cut -d' ' -f2- | tail -n +$((cache_limit+1)))
+n_cache_files=$(echo "$cache_files" | wc -l)
+if [ "$n_cache_files" -gt "$CACHE_FILE_LIMIT" ]; then
+   echo "INFO: Deleting cache files..."
+   echo "$cache_files" | xargs rm
+else
+   echo "INFO: Cache files not found or below the limit."
+fi

@@ -1,0 +1,14 @@
+# Be careful because #eeeeee means transparent.
+swaylock \
+    --daemonize \
+    --color "#000000" \
+    --inside-color "#282a2b" \
+    --inside-clear-color "#ffffff" \
+    --ring-color "#3B758C" \
+    --ring-clear-color "#9fca56" \
+    --ring-ver-color "#55b5db" \
+    --show-failed-attempts \
+    --ignore-empty-password \
+    --indicator-thickness 50 \
+    --indicator-radius 425
+

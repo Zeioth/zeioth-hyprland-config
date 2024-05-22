@@ -1,0 +1,10 @@
+# Note: On hyprland, set the variable 'cursor_inactive_timeout' to the same
+#       ms as the hyprlock timeout. This will hide the cursor as we go into lock.
+#       see ~/.config/hypr/config.d/00-theming
+
+swayidle -w \
+    timeout 240 'light -G > /tmp/brightness && light -S 10' resume 'light -S $([ -f /tmp/brightness ] && cat /tmp/brightness || echo 100%)' \
+    timeout 900 'hyprctl dispatcher movecursortocorner 1; exec hyprlock' \
+    resume 'hyprctl dispatcher dpms on' \
+    before-sleep 'playerctl pause' \
+    before-sleep 'exec hyprlock'
