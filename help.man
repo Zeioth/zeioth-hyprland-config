@@ -14,6 +14,7 @@ Zeioth's personal hyprland congfiguration
  \fBconfig.d\fP   Hyprland settings.
  \fBhardware.d\fP hardware settings.
  \fBmodes.d\fP    keyboard modes.
+ \fBscripted-features\fP    Optional things \fBcopy into ~/.local/bin\fP.
 .SH EXAMPLES
  \fB1)\fP Add a variable to the file you choose on   \fB→ ./variables.d\fP
  \fB2)\fP Call it from a configuration you choose in \fB→ ./config.d\fP
