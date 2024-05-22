@@ -67,8 +67,8 @@ general {
 }
 
 cursor {
-  inactive_timeout = 900
-  no_warps = false
+  inactive_timeout = 900  # Hide the cursor after n ms (also works on screenlock)
+  no_warps = false        # Never move the cursor automatically
 }
 
 misc {
