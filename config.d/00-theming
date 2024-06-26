@@ -132,7 +132,7 @@ dwindle {
 
 # See: https://wiki.hyprland.org/Configuring/Master-Layout
 master {
-  new_is_master = true
+  new_on_top = true
 }
 
 # See: https://wiki.hyprland.org/Configuring/Variables
