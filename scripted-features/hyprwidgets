@@ -2,7 +2,7 @@
 
 
 # IT WON'T WORK JUT YET
-# nwg-wrapper only work with some lock protocols.
+# nwg-wrapper only work with some versions of the lock protocol.
 
 nwg-wrapper \
    -o $screen5 \
