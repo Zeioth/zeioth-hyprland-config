@@ -2,7 +2,7 @@
 
 
 # IT WON'T WORK JUT YET
-# nwg-wrapper only work on sway currently.
+# nwg-wrapper only work with the lock protocol v1.
 
 nwg-wrapper \
    -o $screen5 \
