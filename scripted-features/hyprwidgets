@@ -1,7 +1,7 @@
 #/bin/bash
 
 
-# IT WON'T WORK JUT YET
+# IT WON'T WORK JUST YET
 # nwg-wrapper only work with some versions of the lock protocol.
 
 nwg-wrapper \
