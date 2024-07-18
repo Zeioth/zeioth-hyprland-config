@@ -37,7 +37,6 @@ cursor {
   default_monitor = $screen5 # Monitor where the cursor goes on startup.
 }
 
-# BUG: ATM using 10 bits mode will cause OBS to render black.
 # See https://wiki.hyprland.org/Configuring/Monitors/
 # SCREEN            RESOLUTION         POS          SCALE  COLOR
 monitor = $screen1, 3840x2160@60,      0x0,         1,     bitdepth,10
