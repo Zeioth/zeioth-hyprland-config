@@ -15,7 +15,7 @@ Clone the directory into `~/.config` and use it as base for your config. Or just
 
 ## YOU SHOULD
 
-Read `hypr.config`. From there is quite easy to understand everything.
+Read `hyprland.config`. From there is quite easy to understand everything.
 
 ## COOL TO TWEAK (BUT NOT NECESSARY)
 
